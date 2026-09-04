@@ -1,0 +1,20 @@
+packages:
+  - apps/*
+  - packages/*
+  - tools/*
+
+nodeLinker: hoisted
+enablePrePostScripts: true
+engineStrict: true
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  simple-git-hooks: true
+  unrs-resolver: true
+
+overrides:
+  '@types/node': 24.13.3
+  eslint: ^10.9.1
+  '@eslint/js': ^10.0.0
+  next@<16.3.3: 16.3.3

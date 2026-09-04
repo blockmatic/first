@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "skills": {
+    "file-organization-v1": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/file-organization-v1/SKILL.md",
+      "computedHash": "002c60ac87f283c2a489a512a7fc08543444beb73026d6b6f9c4f4ba7c27201a"
+    },
+    "frontend-design-v1": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design-v1/SKILL.md",
+      "computedHash": "b88872a00592c6962be2e87aacf19c8fcaba04d24dc16adbdce40bd981d23ad3"
+    },
+    "next-v16": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/next-v16/SKILL.md",
+      "computedHash": "230365194e69a6949797349b54aeaaca3b6db4c91c5351d278a0293cdbad85c5"
+    },
+    "nuqs-v2": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/nuqs-v2/SKILL.md",
+      "computedHash": "5063df2c7617f3c3638dc44729971d5648c90a04a4aadce826b0347bb215fa9f"
+    },
+    "shadcn-v3": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/shadcn-v3/SKILL.md",
+      "computedHash": "ec7040adeb87150fd421d13b003db359e34881329d21db87fd75f90dc3b251c8"
+    },
+    "tailwind-design-system-v4": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/tailwind-design-system-v4/SKILL.md",
+      "computedHash": "9336f38958f2a6cb46553eb4e08e70e8f2979898dbfa4fd086e2b983aad0fc66"
+    },
+    "vercel-react-v1": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-react-v1/SKILL.md",
+      "computedHash": "f451c6eddc8acea6cba67c6f54dc9a1d602f4353b0b0fc26fbd5580b4a0ec68a"
+    },
+    "vitest-v4": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/vitest-v4/SKILL.md",
+      "computedHash": "26600524df910f688aeb75856b8ec457fe72250947e61f8fc8ba47d8bd8bb1c9"
+    },
+    "workflow": {
+      "source": "blockmatic/basilic-skills",
+      "sourceType": "github",
+      "skillPath": "skills/workflow/SKILL.md",
+      "computedHash": "634035249f98ddaa65542d282a0a3d2ab87dd7ae8113c3a45dda7fd94aa5414b"
+    }
+  }
+}

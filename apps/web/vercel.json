@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "npx turbo-ignore @repo/web --fallback=HEAD^1",
+  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@repo/web...",
+  "installCommand": "cd ../.. && pnpm install",
+  "devCommand": "cd ../.. && pnpm dev --filter=@repo/web",
+  "git": { "deploymentEnabled": { "main": true } },
+  "outputDirectory": ".next",
+  "framework": "nextjs"
+}

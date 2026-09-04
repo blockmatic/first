@@ -1,0 +1,26 @@
+---
+description: Best practices for writing high-quality agent skills
+globs: ".agents/skills/**/*"
+alwaysApply: false
+---
+
+## Scope
+Skills are on-demand expertise. `name` must match the folder that contains `SKILL.md`.
+
+## Two kinds
+- **Tech** (`<topic>-v<major>/`, e.g. `fastify-v5`): agent-invocable. Required sections: Scope, Assumptions, Principles, Constraints, Interactions
+- **Workflow** (`.agents/skills/workflow/<name>/`): slash-only. Set `disable-model-invocation: true`. One-line `description`. Not versioned
+
+## Principles
+- One primary topic per skill; independent versions = separate skills
+- `name` lowercase/digits/hyphens, max 64, equals folder name
+- Prefer `paths` over legacy `globs` when file-scoped
+- Declarative: state what is true. Patterns over long examples
+- Progressive disclosure: keep `SKILL.md` short; depth in `references/` or `PATTERNS.md`
+- No repo-specific paths in tech skills. Rules override skills
+- Workflow descriptions stay one line (discovery tokens are always-on)
+
+## Hierarchy
+Rules (constraints) > skills (patterns) > model
+
+Update procedure and inventory: `apps/web/content/docs/development.mdx`. Canonical catalog: `blockmatic/basilic-skills`.

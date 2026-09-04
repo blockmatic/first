@@ -1,0 +1,76 @@
+---
+title: Development
+description: Cursor-first workflow for the FIRST factory and site.
+---
+
+Development is **Cursor-first**. Claude Code follows the same rules and skills via root `AGENTS.md`.
+
+## Layout
+
+- `_first/` — factory markdown (articles, principles, ABOUT, AGENTS) plus this repo’s `instance/` overlays and `FIRST.md`
+- `apps/web` — Next.js 16 site (landing, articles, spec, these docs)
+- `packages/ui` — slim tokens and button
+- `packages/validate` — structural checks for the factory
+- `tools/` — shared ESLint and TypeScript config
+
+## Commands
+
+```bash
+pnpm i
+pnpm dev          # site
+pnpm validate     # factory pairs, headings, links
+pnpm lint
+pnpm checktypes
+pnpm qa           # validate + lint + types
+```
+
+Site URL defaults to `http://localhost:3000`. Override with `NEXT_PUBLIC_SITE_URL`.
+
+## Guidance hierarchy
+
+| Layer | Role |
+| --- | --- |
+| **Rules** (`.cursor/rules`) | Constraints |
+| **Workflow skills** (`.agents/skills/workflow/<name>/`) | Slash playbooks (`/plan-feature`, `/exec-push`, `/git-commit`) |
+| **Tech skills** | `next-v16`, `vercel-react-v1`, `frontend-design-v1`, … |
+| **Indexed docs** | This page. Advisory |
+
+Refresh skills from [blockmatic/basilic-skills](https://github.com/blockmatic/basilic-skills):
+
+```bash
+pnpm dlx skills@latest add blockmatic/basilic-skills --skill next-v16 --skill vercel-react-v1 --skill nuqs-v2 --skill vitest-v4 --skill file-organization-v1 --skill frontend-design-v1 --skill shadcn-v3 --skill tailwind-design-system-v4 --skill workflow -a cursor --copy -y
+```
+
+Commit `skills-lock.json` with `.agents/skills/`.
+
+## Who edits what
+
+| Path | Who | Upstream update |
+| --- | --- | --- |
+| `_first/articles`, `_first/principles`, `_first/AGENTS.md`, `_first/ABOUT.md` | Maintainers | Adopters replace after reviewing the diff |
+| `_first/FIRST.md`, `_first/instance/` | Maintainers of *this* product | Adopters never copy |
+| `apps/web` | Maintainers | Site only |
+| Adopter `_first/FIRST.md` and instance files | Adopters | Never overwrite from upstream |
+
+Edit essays and specs in `_first/`. The site reads those files; do not paste a second copy under `apps/web/content`.
+
+## Workflow
+
+1. **Plan** — Plan mode, then `/plan-feature`. List goals first.
+2. **Review** — `/review-plan` if you want a structured pass.
+3. **Execute** — `/exec-push`. Test between steps (`pnpm validate` when factory files change).
+4. **Commit** — `/git-commit`. Conventional Commits. Never `--no-verify`.
+
+When UI changes, verify in the browser: home, one article, one spec, a docs page.
+
+## Agent load order
+
+1. Root `AGENTS.md`
+2. `_first/AGENTS.md`
+3. `_first/ABOUT.md`
+4. `_first/FIRST.md`
+5. This repository’s rules and skills (override the factory)
+6. `_first/principles/X.md`
+7. The instance path in `FIRST.md`
+
+Do not load `maintainers/` on a product task.

@@ -1,0 +1,35 @@
+name: Lint
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup-pnpm
+
+      - name: Validate FIRST documentation
+        run: pnpm validate
+
+      - name: Test FIRST validator
+        run: pnpm --filter @repo/validate test
+
+      - name: Run lint
+        run: pnpm lint
+
+      - name: Run type check
+        run: pnpm exec turbo run checktypes

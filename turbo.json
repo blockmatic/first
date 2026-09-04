@@ -1,0 +1,38 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"],
+      "env": ["NODE_ENV"]
+    },
+    "@repo/web#build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", "../../_first/articles/**", "../../_first/principles/**"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["NODE_ENV", "VERCEL", "VERCEL_ENV", "VERCEL_URL", "NEXT_PUBLIC_SITE_URL"]
+    },
+    "lint:eslint": {},
+    "lint:eslint:fix": {
+      "cache": false
+    },
+    "checktypes": {
+      "env": ["NODE_ENV"]
+    },
+    "test": {
+      "cache": false,
+      "env": ["NODE_ENV", "CI"]
+    },
+    "validate": {
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": [],
+      "cache": false,
+      "persistent": true,
+      "env": ["NODE_ENV", "NEXT_PUBLIC_SITE_URL"]
+    }
+  }
+}

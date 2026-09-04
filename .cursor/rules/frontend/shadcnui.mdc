@@ -1,0 +1,27 @@
+---
+description: ShadcnUI component guidelines and patterns
+globs: "apps/web/**/*.{tsx,css},packages/ui/**/*.{tsx,css}"
+alwaysApply: false
+---
+
+## Core Principles
+Install in `@repo/ui` (packages/ui), import from `@repo/ui/components/*`, all Radix UI from `@repo/ui/radix` (never direct `@radix-ui/react-*`), update Tailwind in packages/ui, app-specific in app's `components`, hooks/utils collocated
+
+## Don't Reinvent the Wheel
+Check existing blocks/templates before building. Full page/block → `shadcnui-jpisnice-react` MCP. Single component → `shadcnui-official` MCP. Only call MCP when unsure/errors
+
+## Installation Pattern
+Components in `packages/ui/src/components/`. App's `components.json`: `"utils": "@repo/ui/lib/utils"`, `"ui": "@repo/ui/components"`
+
+## Import Patterns
+`import { Button } from "@repo/ui/components/button"`, `import { cn } from "@repo/ui/lib/utils"`
+
+## Component Patterns
+Use cva for variants, `cn` for class merging. See @.agents/skills/shadcn-v3
+
+## Design System Organization
+**Base (Primitives) → `@repo/ui`**: `packages/ui/src/components/`, shared across apps
+**Blocks/Templates**: Reusable (2+ apps) → `@repo/ui/blocks/`, App-specific → `apps/{app}/components/`
+
+## Mobile-First Design
+All components mobile-first. See @.cursor/rules/frontend/mobile-first.mdc

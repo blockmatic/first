@@ -1,0 +1,38 @@
+---
+title: Packaging
+description: What adopters copy, edit, and skip.
+---
+
+Canonical layout lives in [`_first/maintainers/PACKAGING.md`](https://github.com/blockmatic/first/blob/main/_first/maintainers/PACKAGING.md). Summary for humans:
+
+## Copy
+
+Into `_first/` at the adopting repository root:
+
+- `AGENTS.md`
+- `ABOUT.md`
+- `principles/`
+- `README.md` if you want the human door
+- `articles/` optionally (this site already publishes them)
+
+Create `FIRST.md`. Merge a pointer into existing root `AGENTS.md`. Do not overwrite that file.
+
+## Skip
+
+- `instance/` — this repository’s dogfood overlays
+- `maintainers/` — factory evolution notes
+- `packages/validate` — source-tree validator, not an adopter tool
+
+## Edit vs replace
+
+| File | Who | Update from upstream |
+| --- | --- | --- |
+| `_first/AGENTS.md`, `ABOUT.md`, `principles/` | User copies; maintainer authors | Replace after reviewing the diff |
+| `_first/FIRST.md`, opted-in station files | User edits | Never overwrite |
+| Root `AGENTS.md` | User merges a pointer | Never overwrite the rest |
+
+Absent files beat empty stubs. Do not generate twelve empty station files. There is no FIRST skill to install.
+
+## Basilic
+
+[basilic](https://github.com/blockmatic/basilic) is the first external adopter: it vendors the user pack and keeps basilic-specific overlays under `_first/basilic/`.

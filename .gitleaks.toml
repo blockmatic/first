@@ -1,0 +1,16 @@
+title = "Security Scan"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allowlist for templates and docs"
+paths = [
+  '''\.env\.[^/]+\.example$''',
+  '''\.github/workflows/.*\.yml$''',
+  '''test.*\.(ts|tsx|js|jsx|mjs)$''',
+  '''.*\.test\.(ts|tsx|js|jsx|mjs)$''',
+  '''.*\.spec\.(ts|tsx|js|jsx|mjs)$''',
+  '''_first/''',
+  '''docs/''',
+]

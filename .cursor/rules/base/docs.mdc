@@ -1,0 +1,29 @@
+---
+description: Documentation standards and best practices
+globs: "apps/web/content/docs/**/*.mdx"
+alwaysApply: false
+---
+
+## Writing Principles
+- Simple, succinct, technical, factual
+- Active voice, concrete examples, consistent terminology
+- 300-500 words/section, remove redundancy
+
+## Content Structure
+- Most important information first
+- Clear headings, one concept per section
+- Link related pages at end (optional)
+- Page structure: Title/description → short intro → Main content (H2/H3) → Examples → Related links (when relevant)
+
+## Navigation
+- Max 5-7 top categories, max 2 levels deep
+- Breadcrumb-friendly, bidirectional links, search-optimized
+
+## Organization
+- DRY, progressive complexity (simple → advanced)
+- Task-based guides, separate reference from tutorials, modular
+
+## Layers
+- This MDX is canonical (architecture, ADRs, how-to). Rules do not `@`-attach it
+- READMEs are how to run the app/package; they link here, no duplication
+- Update this page when behavior, architecture, commands, or conventions change (same change as the code)

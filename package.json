@@ -1,0 +1,42 @@
+{
+  "name": "first",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "qa": "pnpm validate && pnpm lint && pnpm checktypes",
+    "checktypes": "turbo checktypes",
+    "format": "biome format . --write",
+    "lint": "pnpm lint:biome && pnpm lint:eslint",
+    "lint:biome": "biome check .",
+    "lint:biome:fix": "biome check . --write",
+    "lint:eslint": "turbo run lint:eslint",
+    "lint:eslint:fix": "turbo run lint:eslint:fix",
+    "lint:fix": "pnpm lint:eslint:fix && pnpm lint:biome:fix",
+    "test": "turbo run test",
+    "validate": "pnpm --filter @repo/validate validate",
+    "hooks:pre-commit": "biome check --write --staged --no-errors-on-unmatched && git update-index --again",
+    "postinstall": "npx simple-git-hooks",
+    "setup": "pnpm i && npx simple-git-hooks"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.11",
+    "@repo/typescript-config": "workspace:*",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@types/react": "^19.2.18",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.9.1",
+    "simple-git-hooks": "2.14.0",
+    "turbo": "^2.10.12",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "vitest": "^4.1.11"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "packageManager": "pnpm@11.24.0",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm hooks:pre-commit"
+  }
+}
