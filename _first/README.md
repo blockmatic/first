@@ -58,7 +58,7 @@ Optional: `articles/`. Skip `maintainers/` and `instance/`.
 Add [FIRST.md](FIRST.md) listing which stations are in (path to the artifact) and which are out (one-line reason). Merge a pointer into the existing root `AGENTS.md`. Do not overwrite that file. Do not copy `ABOUT.md` and `principles/` into the repository root as loose files.
 
 ```markdown
-- FIRST: `_first/AGENTS.md` then `_first/FIRST.md`; then `_first/principles/X.md` and the instance path listed in FIRST.md
+- FIRST: `_first/AGENTS.md` then `_first/ABOUT.md` then `_first/FIRST.md`; then `_first/principles/X.md` and the instance path listed in FIRST.md
 ```
 
 Keep project-specific facts in `FIRST.md` and opted-in station files, or in docs those files point at. Do not edit the generic specs to encode one project's choices. Absent files beat empty stubs. Do not generate twelve skeletons.

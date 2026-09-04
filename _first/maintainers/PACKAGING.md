@@ -46,7 +46,7 @@ Copy for a new user repo: `AGENTS.md`, `ABOUT.md`, `principles/`, and this READM
 
 ## Why root AGENTS.md points in
 
-[AGENTS.md](https://agents.md/) at the repository root is the portable always-on hook. Nested `_first/AGENTS.md` applies when editing files under `_first/`, not when editing `apps/web/`. The factory rules live in `_first/AGENTS.md`. Root `AGENTS.md` points at it in a few lines.
+[AGENTS.md](https://agents.md/) at the repository root is the portable always-on hook. Nested `_first/AGENTS.md` applies when editing files under `_first/`, not when editing `apps/web/`. The factory rules live in `_first/AGENTS.md`. Root `AGENTS.md` points at it in a few lines. This factory also keeps a root [`ABOUT.md`](../../ABOUT.md) stub that links here so a clone finds the map without opening `_first/` first. Adopters do not copy that stub.
 
 SoulSpec’s Cursor install writes `.cursor/rules/` for the same reason. FIRST uses root `AGENTS.md` instead so Codex, Copilot, and Windsurf get the hook without a Cursor-only copy.
 
@@ -71,6 +71,32 @@ Absent files beat empty stubs. Do not generate twelve skeletons. Human gates (pr
 When Design is in, point at one `DESIGN.md`. Prefer `_first/DESIGN.md`. Lint with an explicit path: `npx @google/design.md lint _first/DESIGN.md`. A root `DESIGN.md` only if existing tooling requires it; then `FIRST.md` points at that one file. Never two palettes.
 
 Google `DESIGN.md` may omit sections via YAML `omitted` with a reason. Unknown headings are preserved: use them for interface states, copy, motion, and accessibility beyond contrast.
+
+## Overlay as delta
+
+Instance files (`instance/` here, `_first/<product>/` in an adopter) are **deltas**: Fact, Drift, Unresolved, and pointers to canonical docs. They keep the same `##` headings as `principles/` for format sync. They do **not** clone the generic Recipe, Agent Prompt, or Statement. Do not require a full principle paste to “complete” an overlay.
+
+`FIRST.md` may point at existing docs in the adopting repository instead of a long overlay.
+
+## Sync matrix (adopter vendor)
+
+Replace from this repo after reviewing the diff. Never overwrite the adopter’s instance map or overlays.
+
+| Path in adopter | From this repo | On upstream update |
+|---|---|---|
+| `_first/AGENTS.md` | `_first/AGENTS.md` | Replace |
+| `_first/ABOUT.md` | `_first/ABOUT.md` | Replace |
+| `_first/principles/` | `_first/principles/` | Replace |
+| `_first/README.md` | `_first/README.md` | Optional replace |
+| `_first/articles/` | `_first/articles/` | Optional; GitHub links are enough |
+| `_first/FIRST.md` | — | **Never overwrite** |
+| Instance folder (`instance/`, `_first/basilic/`, …) | — | **Never overwrite** |
+| Root `AGENTS.md` | pointer lines only | Merge pointer; never replace the file |
+| Root `ABOUT.md` (this factory stub) | — | Adopters skip; not part of the user pack |
+
+## Scratch graduation
+
+`__dev/` (gitignored) and chat are scratch. A note **graduates** when the next session would rediscover it: write the Fact into the canonical docs, an ADR, or the overlay in the same change. Scratch is not the backlog and not Documentation Fact.
 
 ## Copy, edit, replace
 
