@@ -14,7 +14,7 @@ Core domain concepts have shared names and definitions. Each important dataset h
 
 ## Artifacts
 
-- **Fact:** Domain: twelve **stations**; each has an essay (`articles/X.md`) and a spec (`principles/X.md`)
+- **Fact:** Domain: ten **stations**; each has an essay (`articles/X.md`) and a spec (`principles/X.md`)
 - **Fact:** Identity: uppercase filename `PRODUCT.md` … `OPERATIONS.md`. Site slugs are lowercase `product`
 - **Fact:** Owner of factory meaning: this git repository’s `_first/` tree
 - **Fact:** Derived copy: HTML on `apps/web` — rebuilds from markdown, must not diverge in wording
@@ -25,7 +25,7 @@ Core domain concepts have shared names and definitions. Each important dataset h
 ## Minimum Useful Artifact
 
 - name: station
-- identity: filename stem in the canonical twelve-name list
+- identity: filename stem in the canonical ten-name list
 - owner: `_first/` maintainers
 - writers: humans (and agents) on PRs; readers: site, adopters, agents
 - derived copies: Next.js pages

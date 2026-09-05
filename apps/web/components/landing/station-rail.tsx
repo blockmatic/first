@@ -5,7 +5,7 @@ export function StationRail() {
   return (
     <section className="border-b border-border px-6 py-16">
       <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground">
-        Twelve stations
+        Ten stations
       </p>
       <h2 className="font-display mt-3 text-3xl">Not a waterfall. One factory line.</h2>
       <ol className="mt-10 flex gap-2 overflow-x-auto pb-4">

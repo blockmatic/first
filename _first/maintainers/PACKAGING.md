@@ -14,7 +14,7 @@ Human vs agent is a second axis: `README.md` and `articles/` for humans; `AGENTS
 Borrow shape, not identity.
 
 - **Packaging** — [SoulSpec](https://soulspec.org/): one folder, a short manifest, required core plus opt-in files, markdown until a tool needs JSON. FIRST is not a persona spec. Do not add `SOUL.md`, `IDENTITY.md`, or `HEARTBEAT.md`.
-- **Design artifact** — [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md) ([google-labs-code/design.md](https://github.com/google-labs-code/design.md), alpha): when Design is in, the instance file is a `DESIGN.md` with optional YAML tokens plus markdown rationale. Design First stays behavior, states, copy, motion, and browser verification. The Google file is how visual identity is written down, parallel to OpenAPI versus API First. See [../principles/DESIGN.md](../principles/DESIGN.md).
+- **Design artifact** — [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md) ([google-labs-code/design.md](https://github.com/google-labs-code/design.md), alpha): optional `_first/DESIGN.md` with YAML tokens plus markdown rationale. The Google file is how visual identity is written down, parallel to OpenAPI versus API First. It is not a station.
 
 ## Three layers
 
@@ -70,7 +70,7 @@ Markdown analogue of SoulSpec’s `soul.json`. Lists which stations are in (path
 
 Absent files beat unused templates. Copy a template only for stations listed as In. Human gates (product scope, security-sensitive changes, destructive operations) still apply when `SECURITY.md` is absent — they stay in factory `AGENTS.md`.
 
-When Design is in, point at one `DESIGN.md`. Prefer `_first/DESIGN.md`. Lint with an explicit path: `npx @google/design.md lint _first/DESIGN.md`. A root `DESIGN.md` only if existing tooling requires it; then `FIRST.md` points at that one file. Never two palettes.
+When the project has a visual identity file, point at one `DESIGN.md`, not a station. Prefer `_first/DESIGN.md`. Lint with an explicit path: `npx @google/design.md lint _first/DESIGN.md`. A root `DESIGN.md` only if existing tooling requires it; then `FIRST.md` points at that one file. Never two palettes.
 
 Google `DESIGN.md` may omit sections via YAML `omitted` with a reason. Unknown headings are preserved: use them for interface states, copy, motion, and accessibility beyond contrast.
 
@@ -117,10 +117,10 @@ Replace from this repo after reviewing the diff. Never overwrite the adopter’s
 - **`first/` without the underscore** — loses listing order.
 - **`.agents/_first`** — hidden; sits next to the skills CLI overwrite target; nested `AGENTS.md` still would not load for app work.
 - **A FIRST skill that mixes spec and instance** — refresh would clobber product facts. The `/f` skill is the portable spec only. Instance files stay in `_first/`.
-- **Root `PRODUCT.md` … `OPERATIONS.md`** — twelve optional files pollute the root. The folder is the package.
+- **Root `PRODUCT.md` … `OPERATIONS.md`** — ten optional files pollute the root. The folder is the package.
 - **`first.json`** — SoulSpec’s JSON exists for CLI and registry. Skip until those exist.
 - **Cursor-only `.cursor/rules` as the spec hook** — not portable. A one-line always-on pointer in this repo is optional; the spec hook is `AGENTS.md`.
-- **Persona files** — not FIRST’s job. `/f-designer` is an invoke-only lens, not `SOUL.md`.
+- **Persona files** — not FIRST’s job. Visual work uses `frontend-design-v1`, not a persona spec.
 
 ## Related
 

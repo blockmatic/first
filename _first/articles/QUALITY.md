@@ -32,7 +32,7 @@ Quality is how the product stays itself while it changes.
 
 A named bar is how you keep customer experience from drifting. The happy path that worked last month should still work. Retrieval that lawyers depend on should not silently get worse after a prompt edit. That is product integrity, not coverage percentage.
 
-It makes experiments honest at the behavior layer. Journeys become acceptance tests. Product First's post-launch metrics are a different question — they need events in the product. Without that split, "done" is either a feeling or a dashboard you waited on before shipping.
+It makes experiments honest at the behavior layer. User-visible completion becomes acceptance tests. Product First's post-launch metrics are a different question — they need events in the product. Without that split, "done" is either a feeling or a dashboard you waited on before shipping.
 
 Time to market improves when regressions are cheap to catch. The alternative is a freeze, a hero QA pass, or a production surprise.
 
@@ -42,7 +42,7 @@ Performance budgets are product decisions. Latency is part of checkout, voice, a
 
 ## Engineering Leverage
 
-Explicit criteria make automation possible. Pipelines can run a bar. They cannot invent one.
+Explicit criteria make automation possible. Workflow can run a bar. It cannot invent one.
 
 Behavior-focused tests protect contracts and critical paths without coupling to implementation trivia. That is independent evolution: you can change internals if the assertions still hold.
 
@@ -50,7 +50,7 @@ Failures should be actionable. Noise trains people and agents to ignore the gate
 
 For AI features, keep deterministic checks at the base: schemas, tool permissions, retrieval tenancy, fallbacks. Put scored evals where the output is probabilistic. Do not put an expensive judge on every commit if that prices the gate out of existence.
 
-The pyramid still helps you place the cheap checks. Unit and contract tests belong near the commit. Broad browser checks and evals are fewer, slower, and should assert the job, not the implementation trivia. Quality names that mix. Pipelines is what actually runs it.
+The pyramid still helps you place the cheap checks. Unit and contract tests belong near the commit. Broad browser checks and evals are fewer, slower, and should assert the job, not the implementation trivia. Quality names that mix. Workflow is what actually runs it.
 
 ## In an Agentic System
 
@@ -66,7 +66,7 @@ For in-product agents, evals are how the product knows the agent still does the 
 
 Quality First is not Test First alone, and it is not 100% coverage on everything. A prototype does not need a cathedral of tests.
 
-It does not replace Pipelines First. Quality defines what to validate. Pipelines run the validation. Mixing those two is how you get a green build that never checked the thing users will feel.
+It does not replace Workflow First. Quality defines what to validate. Workflow runs the validation. Mixing those two is how you get a green build that never checked the thing users will feel.
 
 It does not replace Product First. Product names the outcome you will observe after people use the thing, and ships the events that make that observation possible. Quality names the bar that gates a release. Do not block a ship on thirty-day retention. Do not treat a green pipeline as market validation.
 

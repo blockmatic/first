@@ -56,7 +56,7 @@ Agents need canonical nouns. If two schemas use `case_id` differently, an agent 
 
 A coding agent should trace writes and reads before creating state. It should inspect migrations, events, analytics models, caches, and external sources—not only the primary ORM model. It should identify the owner and lifecycle before introducing another copy.
 
-In-product agents create new data concerns: conversation history, retrieved context, tool results, embeddings, evaluations, and traces. Some are product state, some are quality datasets, and some are operational telemetry. Naming the owner prevents a debug log from quietly becoming a permanent customer record.
+In-product agents create new data concerns: conversation history, retrieved context, tool results, embeddings, evaluations, and traces. Session and long-term conversational memory are product state in a backing store, with an owner, retention, and deletion. They are not process memory. Some other copies are quality datasets or operational telemetry. Naming the owner prevents a debug log from quietly becoming a permanent customer record. Architecture already places the store and requires a stateless process. Journeys already owns resume in the job.
 
 The agent may propose a model or migration. A human still decides consequential retention, deletion, residency, or product-meaning changes. Data First makes those gates visible before a generated migration runs.
 

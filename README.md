@@ -1,6 +1,6 @@
 # FIRST
 
-The open markdown factory for agent-first products. Twelve stations. Essays for humans. Specs for agents. A Next.js site that publishes both.
+The open markdown factory for agent-first products. Ten stations. Essays for humans. Specs for agents. A Next.js site that publishes both.
 
 ## Layout
 

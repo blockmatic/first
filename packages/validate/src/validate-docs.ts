@@ -111,7 +111,7 @@ function checkStationFiles({ root, errors }: { root: string; errors: string[] })
 }
 
 function listedStations({ text, name }: { text: string; name: string }): string[] {
-  const catalog = section(text, 'The twelve') ?? ''
+  const catalog = section(text, 'The ten') ?? ''
   if (name === 'README.md')
     return [...catalog.matchAll(/^\|\s*\d+\s*\|\s*([^|]+?)\s*\|/gm)].map(match =>
       (match[1] ?? '').trim().toUpperCase(),

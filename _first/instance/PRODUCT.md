@@ -19,10 +19,12 @@ The project has an inspectable answer to what, why, and how we will know. Non-go
 - **Fact:** Not a billed SaaS. No TAM/LTV. Do not invent a marketplace of personas — that is SoulSpec, not FIRST
 - **Fact:** Observed non-goals: no CLI, no `first.json`, no registry, no 13th station ([`../maintainers/IDEAS.md`](../maintainers/IDEAS.md)). `/f` via `npx skills add blockmatic/first` is in.
 - **Fact:** Site publishes `articles/` (essays) and `principles/` (templates). Instance overlays stay in git, not as a second docs site
+- **Fact:** Tokens live in `packages/ui/src/styles/tokens.css`. No Google-format `DESIGN.md` yet
+- **Fact:** Distinctive type: Syne (display), Source Serif 4 (body), IBM Plex Mono (file trees). Palette: cool mist paper / violet-slate night, Prussian primary, brass accent. Not basilic teal
 - **Unresolved:** GTM (channel, first successful use); success metrics that can fail (not `pnpm qa`); named decision owners
 - **Unresolved:** keep / iterate / kill board; custom domain
 
-`pnpm qa` going green is Quality/Pipelines, not product success.
+`pnpm qa` going green is Quality/Workflow, not product success.
 
 ## Minimum Useful Artifact
 
@@ -59,10 +61,10 @@ Product intent is documented or explicitly deferred with named owners. Implement
 
 Apply Product First to this repository.
 
-Read README, this instance, the site, and maintainer notes before proposing features. Do not invent TAM, a persona registry, or a CLI. Preserve the copy-in user pack and the `/f` skill as portable spec. If the bet changes, update durable project files.
+Read README, this instance, the site, and maintainer notes before proposing features. Do not invent TAM, a persona registry, or a CLI. Preserve the copy-in user pack and the `/f` skill as portable spec. Use `frontend-design-v1` for landing work. Do not clone basilic or SoulSpec chrome. Do not invent a second palette. If the bet changes, update durable project files.
 
 ## Notes
 
-**Product vs Journeys:** Product names what, why, and how we will know. Journeys name how someone finishes.
+How someone finishes a job is part of the implementing change, not a station.
 
 **Navigation:** [Generic spec](../principles/PRODUCT.md) · [Human essay](../articles/PRODUCT.md) · [Factory map](../ABOUT.md)

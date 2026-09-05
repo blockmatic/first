@@ -7,7 +7,7 @@ Resolution pass: 2026-09-03
 
 FIRST has a strong core: a clear human/agent split, a memorable station model, consistent operational specs, and careful boundaries between neighboring concerns. “Articles argue; principles operate” gives the set a useful information architecture.
 
-The original review covered the 23-file, ten-station set. The resolution pass expands it to twelve stations and addresses the actionable structural findings. This file is an advisory review artifact in `maintainers/`, not another principle or part of the user pack.
+The original review covered the 23-file, ten-station set. A later pass added Design and Pipelines as named stations. This factory now folds those back: Design into Journeys, Pipelines into Workflow. The catalog is ten stations again. This file is an advisory review artifact in `maintainers/`, not another principle or part of the user pack.
 
 ## Resolution status
 
@@ -15,7 +15,7 @@ The original review covered the 23-file, ten-station set. The resolution pass ex
 |---|---|---|
 | Canonical source was ignored under `__dev` | Addressed | The set now lives in `_first/` in `blockmatic/first`. |
 | API and Security both owned authorization | Resolved | Security owns policy; API represents and enforces the applicable requirement at the contract boundary; Journeys places the gate in the flow. |
-| Journeys required reviewers to find an unhandled state | Resolved | Validation now requires every mapped state to trace to implementation or an explicit deferral. |
+| Journeys required reviewers to find an unhandled state | Superseded | Station removed. Unhandled states are a Quality and task concern, not a factory overlay. |
 | Draft lifecycle was undefined | Resolved | `ABOUT.md` defines draft/stable semantics, version, and review date. |
 | Multi-station composition was unclear | Resolved | `ABOUT.md` and `AGENTS.md` define primary/secondary station routing with an example. |
 | Specs lacked a minimum artifact shape | Resolved | Every operational spec includes `Minimum Useful Artifact`. |
@@ -36,7 +36,7 @@ Owns canonical domain concepts, identity, authority, lifecycle, retention, linea
 
 ## Remaining release work
 
-1. Canonical factory lives in `blockmatic/first`. Basilic vendors the user pack as an adopter.
+1. Canonical factory lives in `blockmatic/first`. Basilic vendors the user pack as an adopter. Fold leftover `design:` / `pipelines:` keys in the Basilic overlay on the next pack refresh.
 2. Confirm the 2015 Continuous Delivery page and approve the personal case-study claims and remaining historical interpretations for publication.
 3. Promote individual essays from `draft` to `stable` only after that review and a final collection-level edit.
 

@@ -49,6 +49,6 @@ Apply Operations First to this repository. Do not invent SLOs or an on-call char
 
 ## Notes
 
-**Operations vs Pipelines:** Pipelines ship. Operations is the running site.
+**Operations vs Workflow:** Workflow ships. Operations is the running site.
 
 **Navigation:** [Generic spec](../principles/OPERATIONS.md) · [Human essay](../articles/OPERATIONS.md) · [Factory map](../ABOUT.md)

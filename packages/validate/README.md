@@ -1,6 +1,6 @@
 # @repo/validate
 
-Structural checks for the FIRST source tree: twelve essay/spec pairs, templates, `/f` skill catalog and spec sync, headings, front matter, principle parity, station order, and local links.
+Structural checks for the FIRST source tree: ten essay/spec pairs, templates, `/f` skill catalog and spec sync, headings, front matter, principle parity, station order, and local links.
 
 ```bash
 pnpm validate

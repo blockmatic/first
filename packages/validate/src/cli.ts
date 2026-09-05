@@ -1,5 +1,6 @@
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { stations } from './stations.ts'
 import { validateDocs } from './validate-docs.ts'
 
 const scriptDir = dirname(fileURLToPath(import.meta.url))
@@ -14,5 +15,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  'FIRST documentation validation passed: 12 essay/spec pairs, templates, /f skill catalog, FIRST.md, maintainer files, required structure, parity, order, and local links.',
+  `FIRST documentation validation passed: ${stations.length} essay/spec pairs, templates, /f skill catalog, FIRST.md, maintainer files, required structure, parity, order, and local links.`,
 )

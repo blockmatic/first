@@ -40,7 +40,7 @@ Clear boundaries make change local. If dependencies point toward stable domain c
 
 Architecture also makes review possible. “This adds a dependency from the domain to the web framework” is a reviewable statement. “This feels too coupled” is not. Dependency rules can sometimes be enforced with package boundaries, import checks, or build configuration. The diagram and ADR explain the intent; code and checks protect it.
 
-Deployment shape belongs here because process boundaries change failure. An in-process call and a network call can expose the same API while having different latency, availability, retry, and observability needs. Pipelines deliver the units. Operations runs them. Architecture decides that the units exist and explains the trade.
+Deployment shape belongs here because process boundaries change failure. An in-process call and a network call can expose the same API while having different latency, availability, retry, and observability needs. Workflow delivers the units. Operations runs them. Architecture decides that the units exist and explains the trade. Processes stay stateless; backing services are attached resources you can swap. Context-engineering that is a structural boundary belongs in application code, not a notebook string.
 
 The architecture model must follow reality. A pristine diagram that omits the queue, shared database, or manual batch job is worse than a rough diagram that shows the actual plant.
 
@@ -78,3 +78,4 @@ Apply this: [principles/ARCHITECTURE.md](../principles/ARCHITECTURE.md). Return 
 - [C4 system context diagram](https://c4model.com/diagrams/system-context) — the smallest recommended view of people, the system, and external dependencies.
 - [Martin Fowler, "Architecture Decision Record"](https://martinfowler.com/bliki/ArchitectureDecisionRecord.html) — short records of context, decision, rationale, and consequences.
 - [Martin Fowler, "Who Needs an Architect?"](https://martinfowler.com/ieeeSoftware/whoNeedsArchitect.pdf) — architecture as the important, hard-to-change decisions a team needs to understand.
+- [From the Twelve to Sixteen-Factor App](https://cloud.google.com/transform/from-the-twelve-to-sixteen-factor-app) — portable factors (stateless processes, attached backing services) without requiring a particular cloud product.

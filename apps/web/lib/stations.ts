@@ -9,13 +9,7 @@ export const stations = [
     file: 'JOURNEYS',
     slug: 'journeys',
     title: 'Journeys First',
-    owns: 'Actors, states, permissions, errors, and completion',
-  },
-  {
-    file: 'DESIGN',
-    slug: 'design',
-    title: 'Design First',
-    owns: 'How the interface behaves and communicates',
+    owns: 'Actors, states, permissions, errors, completion, and how the interface expresses the job',
   },
   {
     file: 'ARCHITECTURE',
@@ -40,13 +34,7 @@ export const stations = [
     file: 'WORKFLOW',
     slug: 'workflow',
     title: 'Workflow First',
-    owns: 'Actors, handoffs, work state, and human gates',
-  },
-  {
-    file: 'PIPELINES',
-    slug: 'pipelines',
-    title: 'Pipelines First',
-    owns: 'Automated validation and delivery',
+    owns: 'Actors, handoffs, work state, human gates, and automated delivery',
   },
   {
     file: 'QUALITY',

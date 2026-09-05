@@ -19,7 +19,13 @@ Actors, entry points, happy paths, alternates, error paths, permission gates, an
 - **Fact:** Actor — **maintainer**: edits `_first/articles` or `principles`, runs `pnpm validate`, checks the site projection
 - **Fact:** No authenticated journeys. No login, no accounts
 - **Fact:** Failure: broken factory markdown fails `pnpm validate`; broken site links fail the Next build or in-browser check
-- **Unresolved:** named journey files beyond this overlay; analytics for first successful use
+- **Fact:** Landing IA follows SoulSpec’s What / Why / Spec / Get started — not SoulSpec branding or persona files
+- **Fact:** Distinctive type: Syne (display), Source Serif 4 (body), IBM Plex Mono (file trees)
+- **Fact:** Palette: cool mist paper / violet-slate night, Prussian primary, brass accent. Not basilic teal
+- **Fact:** Signature: ten-station rail on the spec index (sequence is real)
+- **Fact:** Chrome primitives in `@repo/ui` (button, tokens). Marketing sections live in `apps/web/components/landing`
+- **Fact:** No Google-format `DESIGN.md` yet. Tokens in `packages/ui/src/styles/tokens.css`
+- **Unresolved:** named journey files beyond this overlay; analytics for first successful use; motion guidelines; copy patterns beyond landing headlines; Google-format `_first/DESIGN.md`
 
 ```mermaid
 stateDiagram-v2
@@ -62,6 +68,8 @@ Apply Journeys First to this repository. Do not map Basilic auth journeys. Stay 
 
 ## Notes
 
-**Journeys vs Product:** Product names the job. Journeys name how it finishes.
+**Journeys vs Product:** Product names the job. Journeys name how it finishes and how the interface expresses it.
+
+**Journeys vs Data:** Conversational resume is in the job. Data owns the memory store.
 
 **Navigation:** [Generic spec](../principles/JOURNEYS.md) · [Human essay](../articles/JOURNEYS.md) · [Factory map](../ABOUT.md)

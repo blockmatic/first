@@ -1,14 +1,14 @@
 ---
 title: Journeys First
 status: draft
-description: Map how someone finishes a job — including errors, permissions, and state — before implementation invents the path from the first screen.
+description: Map how someone finishes a job — including errors, permissions, state, and how the interface expresses it — before implementation invents the path from the first screen.
 ---
 
 # Journeys First
 
 ## Principle
 
-Map how someone finishes a job — including errors, permissions, and state — before implementation invents the path from whichever screen shipped first.
+Map how someone finishes a job — including errors, permissions, state, and how the interface expresses it — before implementation invents the path from whichever screen shipped first.
 
 ## The Case
 
@@ -28,7 +28,9 @@ For LegalAgent I built the Expo assistant — voice, chat, retrieval for case co
 
 Agents implement the flow they can see and invent the rest. If the rest is not written down, the invention becomes the product. In-product agents are actors in the same map. An unnamed actor gets invented tools.
 
-How that plot looks on screen is Design. Do not retell the state model as a layout problem, and do not let a polished empty state stand in for a missing recovery path. A journey shows where a permission gate occurs and what the actor experiences; Security defines who is allowed through it.
+How those states communicate — copy, motion, tokens, primitives — is this station, not a later polish pass. Do not let a polished empty state stand in for a missing recovery path. A journey shows where a permission gate occurs and what the actor experiences; Security defines who is allowed through it.
+
+`DESIGN.md` is one way to write the visual language down so an agent can follow it, parallel to OpenAPI versus API First. Neither file is the principle. A file that only lists hex codes is a theme. Tokens and primitives in code still have to match that file. Two palettes is spec/implementation drift.
 
 ## Product Leverage
 
@@ -36,7 +38,7 @@ A mapped journey is how you stop shipping a pile of screens that do not add up t
 
 It improves customer experience in the places people actually abandon you: errors, permissions, resume, cancel. Empty and failure states are not design polish. They are whether the product still works when reality shows up.
 
-It reduces coupling between surfaces. The same job on web and mobile should not have different permission rules because two routes were built months apart. The journey is the shared plot. How the interface expresses that plot is Design.
+It reduces coupling between surfaces. The same job on web and mobile should not have different permission rules because two routes were built months apart. The journey is the shared plot, including how the interface expresses it.
 
 It makes experiments cheaper. A walking skeleton — Patton's thinnest slice that still crosses the whole job — is a product you can learn from. A vertical slice of one gorgeous step is a demo.
 
@@ -74,7 +76,7 @@ This is not wireframing. It is not a design system. It does not require BPMN, a 
 
 It does not replace Product First. You still need to know what and why before you map how someone finishes.
 
-It is not Design First. Describe what happens and why. How the interface expresses that — tokens, components, motion, copy — is a different decision. A complete flow can still look accidental. A beautiful screen can still trap someone in a state the flow never named.
+It does not mean `DESIGN.md` as a ceremony. If the project already has tokens in a theme or a component library, describe that system rather than inventing a second brand. Hex codes in markdown do not stop a one-off `div`. A green `DESIGN.md` lint is not browser verification.
 
 It is not Security First. Journeys place permission gates in the flow. Security owns the authorization policy behind them.
 
@@ -91,3 +93,4 @@ Apply this: [principles/JOURNEYS.md](../principles/JOURNEYS.md). Return to the [
 - [Jeff Patton, *User Story Mapping*](https://jpattonassociates.com/story-mapping/) — the whole job as a narrative; walking skeleton before muscle. Method, not a requirement.
 - [Clayton Christensen et al., "Know Your Customers' 'Jobs to Be Done'"](https://hbr.org/2016/09/know-your-customers-jobs-to-be-done) — the job is the unit of analysis; screens are hired to finish it.
 - [Evolution of AI UX](https://gaboesquivel.com/blog/2026-01-evolution-ai-ux) — voice, chat, and admin as paths through one product, not as separate apps.
+- [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md) ([google-labs-code/design.md](https://github.com/google-labs-code/design.md)) — YAML tokens plus markdown sections; `omitted`; unknown headings preserved. Currently `alpha`. The artifact format, not the principle.
