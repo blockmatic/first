@@ -3,6 +3,7 @@ node_modules
 .pnp.js
 .pnpm-store
 .logs/
+__dev
 
 .env
 .env.local
