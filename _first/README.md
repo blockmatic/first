@@ -71,8 +71,8 @@ Example `FIRST.md`:
 spec: 0.3-draft
 
 ## In
-- product: _first/PRODUCT.md
-- journeys: _first/JOURNEYS.md
+- product: PRODUCT.md
+- journeys: JOURNEYS.md
 - architecture: docs/architecture.md
 
 ## Out
@@ -88,7 +88,10 @@ Complete structural validation is for this source tree, not a drop-in copy. From
 ```sh
 pnpm validate
 pnpm --filter @repo/validate test
+pnpm --filter @repo/validate validate:adopter -- _first
 ```
+
+`pnpm validate` is the source tree. `validate:adopter` checks In keys and overlays relative to that pack root (`PRODUCT.md`, `JOURNEYS.md`, or `instance/PRODUCT.md` — not `_first/PRODUCT.md`).
 
 The lint workflow runs `pnpm validate` on pull requests. Structural validation is not a substitute for the publication review described in [ABOUT.md](ABOUT.md).
 

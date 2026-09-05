@@ -7,4 +7,11 @@ pnpm validate
 pnpm --filter @repo/validate test
 ```
 
-Does not lint `instance/` headings. Adopter packs are not this validator’s job.
+Does not lint factory `instance/` headings. Adopter packs use a separate opt-in:
+
+```bash
+pnpm --filter @repo/validate validate:adopter -- <path-to-_first>
+pnpm --filter @repo/validate validate:adopter -- <path-to-_first> --skills <path-to-.agents/skills/f>
+```
+
+The adopter check reads `FIRST.md` In keys (the ten stations only), overlay paths and headings, forbids cloned spec headings, and fails leftover `f-designer` / `f-pipelines` folders when a skills tree is present.

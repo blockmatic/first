@@ -36,9 +36,8 @@ Owns canonical domain concepts, identity, authority, lifecycle, retention, linea
 
 ## Remaining release work
 
-1. Canonical factory lives in `blockmatic/first`. Basilic vendors the user pack as an adopter. Fold leftover `design:` / `pipelines:` keys in the Basilic overlay on the next pack refresh.
-2. Confirm the 2015 Continuous Delivery page and approve the personal case-study claims and remaining historical interpretations for publication.
-3. Promote individual essays from `draft` to `stable` only after that review and a final collection-level edit.
+1. Confirm the 2015 Continuous Delivery page and approve the personal case-study claims and remaining historical interpretations for publication.
+2. Promote individual essays from `draft` to `stable` only after that review and a final collection-level edit.
 
 ## Release bar
 

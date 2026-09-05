@@ -5,7 +5,7 @@ You evolve the factory: stations, essays, packaging, and the source-tree validat
 Start here. Then:
 
 - [PACKAGING.md](PACKAGING.md) — layout, load order, copy vs edit, format references, rejected placements
-- [IDEAS.md](IDEAS.md) — parking lot (CLI, site, JSON, adopter validator)
+- [IDEAS.md](IDEAS.md) — parking lot (CLI, site, JSON)
 - [FEEDBACK.md](FEEDBACK.md) — documentation review and remaining release work
 
 User-facing files live one directory up. Agents on a product task load [../AGENTS.md](../AGENTS.md), [../ABOUT.md](../ABOUT.md), and [../FIRST.md](../FIRST.md). They do not load this folder.
@@ -15,6 +15,7 @@ Validate the source tree from the repository root:
 ```sh
 pnpm validate
 pnpm --filter @repo/validate test
+pnpm --filter @repo/validate validate:adopter -- <path-to-_first>
 ```
 
 Do not encode one product’s facts into `principles/`. Project instances belong in the adopting repo (`FIRST.md` and opted-in station files, or this repo’s `instance/` pack).

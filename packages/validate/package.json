@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "validate": "node --experimental-strip-types src/cli.ts",
+    "validate:adopter": "node --experimental-strip-types src/cli.ts --adopter",
     "test": "vitest run",
     "lint:eslint": "eslint . --max-warnings 0",
     "lint:eslint:fix": "eslint . --fix --max-warnings 0",
