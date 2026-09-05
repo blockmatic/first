@@ -2,7 +2,7 @@
 
 Operational overlays for applying FIRST to this factory-and-site repository. Not a second factory. Durable facts live in `_first/` (user pack) and `apps/web/content/docs/`.
 
-This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `ABOUT.md`, `AGENTS.md`, and `principles/` into `_first/`. Add `FIRST.md`.
+This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `ABOUT.md`, `AGENTS.md`, and `templates/` into `_first/`. Add `FIRST.md`. Install `npx skills add blockmatic/first`.
 
 ## Load order
 
@@ -10,9 +10,9 @@ This folder is this repository’s adoption pack. When copying FIRST into anothe
 2. [`../ABOUT.md`](../ABOUT.md)
 3. [`../FIRST.md`](../FIRST.md)
 4. Repo instructions ([`../../AGENTS.md`](../../AGENTS.md), `.cursor/rules`, `.agents/skills`) — these override generic FIRST
-5. [`../principles/X.md`](../principles/API.md) then `X.md` in this folder
+5. Installed `/f-<station>` then `X.md` in this folder
 
-Do not install a FIRST skill. Use existing tech and workflow skills.
+Use `/f-*` for the operational spec. Essays stay on the site.
 
 ## Discovery loop
 

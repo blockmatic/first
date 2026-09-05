@@ -8,12 +8,12 @@ const files = [
     role: 'Canonical map of stations, loops, and boundaries. Shared by humans and agents.',
   },
   {
-    name: 'articles/',
-    role: 'Human essays. Why each concern must be named before the last merge becomes the spec.',
+    name: 'templates/',
+    role: 'Empty overlay structs. Copy only the stations you opted into, then fill facts.',
   },
   {
-    name: 'principles/',
-    role: 'Operational templates. Artifacts, recipe, validation, and an agent prompt per station.',
+    name: '/f-*',
+    role: 'Installed skills. Operational specs for each station, refreshable without touching instance files.',
   },
 ]
 
@@ -22,7 +22,7 @@ export function What() {
     <section id="what" className="border-b border-border px-6 py-20">
       <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground">What</p>
       <h2 className="font-display mt-3 text-3xl md:text-4xl">
-        A minimal pack that gives the work a memory
+        A spec-to-code factory you run first
       </h2>
       <p className="mt-4 max-w-2xl text-muted-foreground">
         AGENTS.md in your repo says how agents work on your code. FIRST says which product concerns

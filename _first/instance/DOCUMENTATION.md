@@ -14,11 +14,11 @@ Project knowledge has a home. Agents load a known order. Humans can find the arg
 
 ## Artifacts
 
-- **Fact:** Factory: `_first/` — README (humans), AGENTS.md (agents), ABOUT.md (map), articles (essays), principles (specs)
+- **Fact:** Factory: `_first/` — README (humans), AGENTS.md (agents), ABOUT.md (map), articles (essays), principles (factory specs), templates (adopter structs)
 - **Fact:** This repo’s instance: `_first/FIRST.md` + `_first/instance/`
 - **Fact:** How to work: `apps/web/content/docs/` and root README
 - **Fact:** Site is a projection of articles/principles plus maintainer docs
-- **Fact:** Load order: root `AGENTS.md` → `_first/AGENTS.md` → ABOUT → FIRST → principles/X → instance path
+- **Fact:** Load order: root `AGENTS.md` → `_first/AGENTS.md` → ABOUT → FIRST → `/f-*` → instance path
 - **Drift:** Essays remain `status: draft` until publication review ([`../maintainers/FEEDBACK.md`](../maintainers/FEEDBACK.md))
 
 ## Minimum Useful Artifact

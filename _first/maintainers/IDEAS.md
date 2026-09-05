@@ -1,6 +1,6 @@
 # Ideas
 
-Parking lot for FIRST itself. Not a roadmap. Decided layout lives in [PACKAGING.md](PACKAGING.md).
+Parking lot for FIRST itself. Not a roadmap. Decided layout lives in [PACKAGING.md](PACKAGING.md). `/f` (nested station skills) shipped; install with `npx skills add blockmatic/first`.
 
 ## Later
 
@@ -15,4 +15,4 @@ The public site (What / Why / Spec / Get started) is `apps/web` in this reposito
 
 - Generating a Basilic Google-format `DESIGN.md` from `packages/ui` tokens. `tokens.css` remains source of truth until a real file is written on purpose.
 - Renaming `_first/` to `first/`.
-- Shipping FIRST as a Cursor skill or under `.agents/`.
+- Shipping a FIRST CLI, `first.json`, or a skill that mixes spec and instance (refresh would clobber product facts). `/f` as a portable spec is in.

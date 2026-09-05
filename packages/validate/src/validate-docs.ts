@@ -3,9 +3,13 @@ import { resolve } from 'node:path'
 import {
   articleHeadings,
   maintainerFiles,
+  nestedSkillFolders,
   principleHeadings,
+  productTemplateHeadings,
   rootFiles,
+  skillFolderByStation,
   stations,
+  templateHeadings,
 } from './stations.ts'
 
 const linkPattern = /\[[^\]]+\]\(([^)]+)\)/g
@@ -157,12 +161,121 @@ function checkLocalLinks({ root, errors }: { root: string; errors: string[] }) {
   }
 }
 
-export function validateDocs({ root }: { root: string }): string[] {
+function checkTemplates({ root, errors }: { root: string; errors: string[] }) {
+  const dir = resolve(root, 'templates')
+  if (!existsSync(dir)) {
+    errors.push('missing templates/')
+    return
+  }
+  for (const name of stations) {
+    const path = resolve(dir, `${name}.md`)
+    if (!existsSync(path)) {
+      errors.push(`missing template: templates/${name}.md`)
+      continue
+    }
+    const text = readFileSync(path, 'utf8')
+    const headings = name === 'PRODUCT' ? productTemplateHeadings : templateHeadings
+    for (const heading of headings)
+      if (section(text, heading) === null)
+        errors.push(`missing heading '${heading}': templates/${name}.md`)
+  }
+}
+
+function parseSkillFrontmatter(content: string) {
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
+  if (!match) return null
+  const block = match[1] ?? ''
+  return {
+    name: block.match(/^name:\s*(.+)$/m)?.[1]?.trim(),
+    description: block.match(/^description:\s*(.+)$/m)?.[1]?.trim(),
+    disableModelInvocation: block.match(/^disable-model-invocation:\s*(true|false)\s*$/m)?.[1],
+  }
+}
+
+function checkSkillsCatalog({
+  repoRoot,
+  firstRoot,
+  errors,
+}: {
+  repoRoot: string
+  firstRoot: string
+  errors: string[]
+}) {
+  const catalogPath = resolve(repoRoot, 'skills.sh.json')
+  if (!existsSync(catalogPath)) {
+    errors.push('missing skills.sh.json')
+    return
+  }
+  const catalog = JSON.parse(readFileSync(catalogPath, 'utf8')) as {
+    groupings?: { skills?: string[] }[]
+  }
+  const grouped = catalog.groupings?.flatMap(group => group.skills ?? []) ?? []
+  if (!grouped.includes('f') || grouped.length !== 1)
+    errors.push('skills.sh.json must group only the installable skill f')
+
+  const parentPath = resolve(repoRoot, 'skills/f/SKILL.md')
+  if (!existsSync(parentPath)) {
+    errors.push('missing skills/f/SKILL.md')
+    return
+  }
+  const parent = parseSkillFrontmatter(readFileSync(parentPath, 'utf8'))
+  if (!parent) errors.push('missing YAML frontmatter: skills/f/SKILL.md')
+  else {
+    if (parent.name !== 'f') errors.push('name must equal folder: skills/f/SKILL.md')
+    if (parent.disableModelInvocation !== 'true')
+      errors.push('disable-model-invocation must be true: skills/f/SKILL.md')
+    if (!parent.description) errors.push('missing description: skills/f/SKILL.md')
+  }
+
+  if (!existsSync(resolve(repoRoot, 'skills/f/references/analyst.md')))
+    errors.push('missing skills/f/references/analyst.md')
+
+  for (const folder of nestedSkillFolders) {
+    const skillPath = resolve(repoRoot, 'skills/f', folder, 'SKILL.md')
+    if (!existsSync(skillPath)) {
+      errors.push(`missing skills/f/${folder}/SKILL.md`)
+      continue
+    }
+    const frontmatter = parseSkillFrontmatter(readFileSync(skillPath, 'utf8'))
+    if (!frontmatter) {
+      errors.push(`missing YAML frontmatter: skills/f/${folder}/SKILL.md`)
+      continue
+    }
+    if (frontmatter.name !== folder)
+      errors.push(`name must equal folder: skills/f/${folder}/SKILL.md`)
+    if (frontmatter.disableModelInvocation !== 'true')
+      errors.push(`disable-model-invocation must be true: skills/f/${folder}/SKILL.md`)
+    if (!frontmatter.description?.includes(`/${folder}`))
+      errors.push(`description must mention /${folder}: skills/f/${folder}/SKILL.md`)
+  }
+
+  const aiSpec = resolve(repoRoot, 'skills/f/f-ai-expert/references/spec.md')
+  if (existsSync(aiSpec)) errors.push('f-ai-expert must not have references/spec.md')
+
+  for (const name of stations) {
+    const folder = skillFolderByStation[name]
+    const specPath = resolve(repoRoot, 'skills/f', folder, 'references/spec.md')
+    const principlePath = resolve(firstRoot, 'principles', `${name}.md`)
+    if (!existsSync(specPath)) {
+      errors.push(`missing skills/f/${folder}/references/spec.md`)
+      continue
+    }
+    if (!existsSync(principlePath)) continue
+    const spec = readFileSync(specPath, 'utf8')
+    const principle = readFileSync(principlePath, 'utf8')
+    if (spec !== principle)
+      errors.push(`spec drift: skills/f/${folder}/references/spec.md !== principles/${name}.md`)
+  }
+}
+
+export function validateDocs({ root, repoRoot }: { root: string; repoRoot?: string }): string[] {
   const errors: string[] = []
   checkRequiredFiles({ root, errors })
   checkStationPairs({ root, errors })
   checkStationFiles({ root, errors })
   checkCanonicalOrder({ root, errors })
   checkLocalLinks({ root, errors })
+  checkTemplates({ root, errors })
+  if (repoRoot) checkSkillsCatalog({ repoRoot, firstRoot: root, errors })
   return errors
 }
