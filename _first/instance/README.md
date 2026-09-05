@@ -2,7 +2,7 @@
 
 Operational overlays for applying FIRST to this factory-and-site repository. Not a second factory. Durable facts live in `_first/` (user pack) and `apps/web/content/docs/`.
 
-This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `ABOUT.md`, `AGENTS.md`, and `templates/` into `_first/`. Add `FIRST.md`. Install `npx skills add blockmatic/first`.
+This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `README.md`, `ABOUT.md`, `AGENTS.md`, and `templates/` into `_first/`. Add `FIRST.md`. Install `npx skills add blockmatic/first`.
 
 ## Load order
 
