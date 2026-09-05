@@ -96,7 +96,7 @@ Replace from this repo after reviewing the diff. Never overwrite the adopter’s
 | Root `AGENTS.md` | pointer lines only | Merge pointer; never replace the file |
 | Root `ABOUT.md` (this factory stub) | — | Adopters skip; not part of the user pack |
 
-From 0.2 (twelve stations): fold DESIGN facts into JOURNEYS (keep a Google-format `DESIGN.md` only if written — it is a Journeys artifact, not a station). Fold PIPELINES facts into WORKFLOW. Drop `design:` and `pipelines:` In keys. Refresh `/f` so leftover `f-designer` / `f-pipelines` folders go away. Never overwrite `FIRST.md` or overlays.
+From 0.2 (twelve stations): fold DESIGN facts into JOURNEYS (keep a Google-format `DESIGN.md` only if written — it is a Journeys artifact, not a station). Move PIPELINES facts into the WORKFLOW overlay and delete the obsolete `PIPELINES.md` station overlay. Drop `design:` and `pipelines:` In keys. Refresh `/f` so leftover `f-designer` / `f-pipelines` folders go away. Never overwrite `FIRST.md` or overlays.
 
 ## Scratch graduation
 

@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { isAbsolute, relative, resolve } from 'node:path'
 import {
   foldedInKeys,
   forbiddenOverlayHeadings,
@@ -33,13 +33,7 @@ export function validateAdopterPack({
     return errors
   }
 
-  const entries = [...inBody.matchAll(/^- ([a-z][a-z0-9-]*): (.+)$/gm)].map(match => ({
-    key: match[1] ?? '',
-    rest: match[2] ?? '',
-  }))
-
-  if (entries.length === 0) errors.push('FIRST.md In list has no station keys')
-
+  const entries = parseInEntries({ inBody, errors })
   for (const { key, rest } of entries) {
     if (foldedKeySet.has(key)) {
       errors.push(`folded station must not be an In key: ${key}`)
@@ -54,7 +48,11 @@ export function validateAdopterPack({
       errors.push(`missing overlay path: ${key}`)
       continue
     }
-    const overlayPath = resolve(root, href)
+    const overlayPath = containedOverlayPath({ root, href })
+    if (!overlayPath) {
+      errors.push(`overlay path escapes pack root: ${href}`)
+      continue
+    }
     if (!existsSync(overlayPath)) {
       errors.push(`missing overlay: ${href}`)
       continue
@@ -67,10 +65,35 @@ export function validateAdopterPack({
   return errors
 }
 
+function parseInEntries({ inBody, errors }: { inBody: string; errors: string[] }) {
+  const items = [...inBody.matchAll(/^- (.+)$/gm)].map(match => match[1] ?? '')
+  if (items.length === 0) {
+    errors.push('FIRST.md In list has no station keys')
+    return []
+  }
+
+  return items.flatMap(item => {
+    const parsed = item.match(/^([a-z][a-z0-9-]*): (.+)$/)
+    if (!parsed) {
+      errors.push(`malformed In entry: ${item}`)
+      return []
+    }
+    return [{ key: parsed[1] ?? '', rest: parsed[2] ?? '' }]
+  })
+}
+
 function overlayHref(rest: string) {
   const linked = rest.match(/\(([^)]+)\)/)
   if (linked?.[1]) return linked[1]
   return rest.split(/\s+—/)[0]?.trim().split(/\s/)[0] ?? ''
+}
+
+function containedOverlayPath({ root, href }: { root: string; href: string }) {
+  if (isAbsolute(href)) return undefined
+  const overlayPath = resolve(root, href)
+  const rel = relative(root, overlayPath)
+  if (rel === '' || rel.startsWith('..') || isAbsolute(rel)) return undefined
+  return overlayPath
 }
 
 function checkOverlayFile({
@@ -113,9 +136,21 @@ function checkLeftoverSkills({
   skillsRoot?: string
   errors: string[]
 }) {
+  if (skillsRoot !== undefined) {
+    if (!existsSync(skillsRoot) || !statSync(skillsRoot).isDirectory()) {
+      errors.push(`skills root is not a directory: ${skillsRoot}`)
+      return
+    }
+    checkLeftoverFolders({ skillsDir: skillsRoot, errors })
+    return
+  }
+
   const inferred = resolve(root, '../.agents/skills/f')
-  const skillsDir = skillsRoot ?? (existsSync(inferred) ? inferred : undefined)
-  if (!skillsDir) return
+  if (!existsSync(inferred)) return
+  checkLeftoverFolders({ skillsDir: inferred, errors })
+}
+
+function checkLeftoverFolders({ skillsDir, errors }: { skillsDir: string; errors: string[] }) {
   for (const folder of leftoverSkillFolders)
     if (existsSync(resolve(skillsDir, folder))) errors.push(`leftover skill folder: ${folder}`)
 }

@@ -100,4 +100,30 @@ describe('validateAdopterPack', () => {
     writeFileSync(resolve(fixtureRoot, 'DESIGN.md'), '# Design\n')
     expect(validateAdopterPack({ root: fixtureRoot })).toEqual([])
   })
+
+  it('rejects malformed In entries before folded-key checks', () => {
+    writeFirst({ dir: fixtureRoot, extraIn: '- pipelines : PIPELINES.md\n' })
+    writeFileSync(resolve(fixtureRoot, 'PIPELINES.md'), thinOverlay)
+    const errors = validateAdopterPack({ root: fixtureRoot })
+    expect(errors).toContain('malformed In entry: pipelines : PIPELINES.md')
+    expect(errors).not.toContain('folded station must not be an In key: pipelines')
+  })
+
+  it('rejects overlay paths outside the pack root', () => {
+    writeFirst({
+      dir: fixtureRoot,
+      extraIn: '- journeys: ../secret.md\n- architecture: /etc/passwd\n',
+    })
+    const errors = validateAdopterPack({ root: fixtureRoot })
+    expect(errors).toContain('overlay path escapes pack root: ../secret.md')
+    expect(errors).toContain('overlay path escapes pack root: /etc/passwd')
+  })
+
+  it('rejects an explicit skills root that is not a directory', () => {
+    writeFirst({ dir: fixtureRoot })
+    const skillsRoot = resolve(fixtureRoot, 'missing-skills')
+    expect(validateAdopterPack({ root: fixtureRoot, skillsRoot })).toContain(
+      `skills root is not a directory: ${skillsRoot}`,
+    )
+  })
 })
