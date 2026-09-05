@@ -2,15 +2,7 @@
 
 ## Principle
 
-See, support, and recover the running system — not only the repository — before incidents invent the runbook.
-
-## Statement
-
-I want to know how the site is hosted, who notices when it is down, and how we recover. This product has no multi-region data plane. It still has a running Next.js app.
-
-## Outcome
-
-Hosting, deploy, and a minimal recovery path are written. SLOs are not invented. Support is GitHub issues.
+See /f-operations.
 
 ## Artifacts
 
@@ -28,27 +20,8 @@ Hosting, deploy, and a minimal recovery path are written. SLOs are not invented.
 - support: GitHub issues
 - SLO: **unresolved** — do not invent one
 
-## Recipe
-
-1. Inspect Vercel project and GitHub repo settings.
-2. Do not copy Basilic’s API/ops stack.
-3. When a monitor is added, name it here.
-
-## Validation
-
-- A maintainer can say where production runs without asking in chat.
-- Missing SLOs are labeled unresolved, not filled with fiction.
-
-## Definition of Done
-
-Hosting and recovery are explicit. Unresolved ops are labeled.
-
-## Agent Prompt
-
-Apply Operations First to this repository. Do not invent SLOs or an on-call chart. Document Vercel and GitHub as the running system.
-
 ## Notes
 
-**Operations vs Workflow:** Workflow ships. Operations is the running site.
+Workflow ships. Operations is the running site. Do not invent SLOs or an on-call chart. Do not copy another adopter’s API/ops stack.
 
 **Navigation:** [Generic spec](../principles/OPERATIONS.md) · [Human essay](../articles/OPERATIONS.md) · [Factory map](../ABOUT.md)
