@@ -20,6 +20,24 @@ export const maintainerFiles = [
   'maintainers/FEEDBACK.md',
 ] as const
 
+export const overlayHeadings = [
+  'Principle',
+  'Artifacts',
+  'Minimum Useful Artifact',
+  'Notes',
+] as const
+
+export const forbiddenOverlayHeadings = [
+  'Recipe',
+  'Statement',
+  'Definition of Done',
+  'Agent Prompt',
+] as const
+
+export const foldedInKeys = ['design', 'designer', 'pipelines'] as const
+
+export const inStationKeys = stations.map(name => name.toLowerCase())
+
 export const principleHeadings = [
   'Principle',
   'Statement',

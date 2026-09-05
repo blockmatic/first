@@ -88,7 +88,10 @@ Complete structural validation is for this source tree, not a drop-in copy. From
 ```sh
 pnpm validate
 pnpm --filter @repo/validate test
+pnpm --filter @repo/validate validate:adopter -- _first
 ```
+
+`pnpm validate` is the source tree. `validate:adopter` checks In keys and overlays (this factory’s `FIRST.md` plus `instance/`).
 
 The lint workflow runs `pnpm validate` on pull requests. Structural validation is not a substitute for the publication review described in [ABOUT.md](ABOUT.md).
 

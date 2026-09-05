@@ -96,6 +96,8 @@ Replace from this repo after reviewing the diff. Never overwrite the adopter’s
 | Root `AGENTS.md` | pointer lines only | Merge pointer; never replace the file |
 | Root `ABOUT.md` (this factory stub) | — | Adopters skip; not part of the user pack |
 
+From 0.2 (twelve stations): fold DESIGN facts into JOURNEYS (keep a Google-format `DESIGN.md` only if written — it is a Journeys artifact, not a station). Fold PIPELINES facts into WORKFLOW. Drop `design:` and `pipelines:` In keys. Refresh `/f` so leftover `f-designer` / `f-pipelines` folders go away. Never overwrite `FIRST.md` or overlays.
+
 ## Scratch graduation
 
 `__dev/` (gitignored) and chat are scratch. A note **graduates** when the next session would rediscover it: write the Fact into the canonical docs, an ADR, or the overlay in the same change. Scratch is not the backlog and not Documentation Fact.
