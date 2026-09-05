@@ -11,5 +11,5 @@ Implement comprehensive error handling for current code to make it robust and re
 3. **Recovery Mechanisms**: Implement retry logic for transient failures, add fallback options, create circuit breakers, design proper error propagation
 4. **User Experience**: Provide clear error messages, implement proper error status codes for APIs, add loading states/error boundaries for UI, include helpful suggestions
 
-Follow `apps/docu/content/docs/architecture/error-handling.mdx`.
+Follow `apps/web/content/docs/development.mdx` for how this repo handles errors in the site. There is no `apps/docu/` tree here.
 
