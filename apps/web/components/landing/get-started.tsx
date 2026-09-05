@@ -7,12 +7,16 @@ export function GetStarted() {
         Get started
       </p>
       <h2 className="font-display mt-3 text-3xl md:text-4xl">
-        Copy the pack. Do not install a skill.
+        Install the skill. Copy the pack. Fill only the stations you opted into.
       </h2>
       <ol className="mt-10 max-w-2xl list-decimal space-y-4 pl-5 text-muted-foreground">
         <li>
-          Copy <code>AGENTS.md</code>, <code>ABOUT.md</code>, and <code>principles/</code> into{' '}
-          <code>_first/</code> at your repository root.
+          Run <code>npx skills add blockmatic/first</code>.
+        </li>
+        <li>
+          Copy <code>AGENTS.md</code>, <code>ABOUT.md</code>, and <code>templates/</code> into{' '}
+          <code>_first/</code> at your repository root. Copy a template only for stations listed as
+          In.
         </li>
         <li>
           Create <code>FIRST.md</code> listing stations in (path) and out (one-line reason). Absent
@@ -24,7 +28,7 @@ export function GetStarted() {
       </ol>
       <pre className="mt-8 max-w-2xl overflow-x-auto border border-border bg-card p-5 font-mono text-xs">
         {
-          '- FIRST: `_first/AGENTS.md` then `_first/FIRST.md`; then `_first/principles/X.md` and the instance path listed in FIRST.md'
+          '- FIRST: `_first/AGENTS.md` then `_first/FIRST.md`; then `/f-*` and the instance path listed in FIRST.md'
         }
       </pre>
       <div className="mt-10 flex flex-wrap gap-4">

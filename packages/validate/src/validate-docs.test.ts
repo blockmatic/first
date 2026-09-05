@@ -15,7 +15,7 @@ describe('validateDocs', () => {
     fixtureRoot = mkdtempSync(resolve(tmpdir(), 'first-docs-'))
     for (const name of ['README.md', 'ABOUT.md', 'AGENTS.md', 'FIRST.md'])
       cpSync(resolve(sourceRoot, name), resolve(fixtureRoot, name))
-    for (const name of ['articles', 'principles', 'maintainers', 'instance'])
+    for (const name of ['articles', 'principles', 'maintainers', 'instance', 'templates'])
       cpSync(resolve(sourceRoot, name), resolve(fixtureRoot, name), { recursive: true })
   })
 
@@ -39,7 +39,7 @@ describe('validateDocs', () => {
   }
 
   it('accepts the source tree', () => {
-    expect(validateDocs({ root: sourceRoot })).toEqual([])
+    expect(validateDocs({ root: sourceRoot, repoRoot: resolve(sourceRoot, '..') })).toEqual([])
   })
 
   it('accepts a copied valid set', () => {
@@ -94,6 +94,20 @@ describe('validateDocs', () => {
     expect(validateDocs({ root: fixtureRoot })).toContain(
       'canonical station list or order is wrong: README.md',
     )
+  })
+
+  it('detects spec drift when repoRoot is set', () => {
+    const repoRoot = resolve(sourceRoot, '..')
+    const specPath = resolve(repoRoot, 'skills/f/f-analyst/references/spec.md')
+    const original = readFileSync(specPath, 'utf8')
+    writeFileSync(specPath, `${original}\n`)
+    try {
+      expect(
+        validateDocs({ root: sourceRoot, repoRoot }).some(item => item.includes('spec drift')),
+      ).toBe(true)
+    } finally {
+      writeFileSync(specPath, original)
+    }
   })
 
   it('detects a missing FIRST.md', () => {

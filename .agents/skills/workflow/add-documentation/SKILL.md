@@ -1,6 +1,6 @@
 ---
 name: add-documentation
-description: Add comprehensive documentation for current code/feature per project standards (README, apps/docu website, or inline comments). Use when the user types /add-documentation.
+description: Add comprehensive documentation for current code/feature per project standards (README, apps/web docs, or inline comments). Use when the user types /add-documentation.
 disable-model-invocation: true
 ---
 
@@ -10,7 +10,7 @@ Add documentation for the current code/feature. Follow `.cursor/rules/base/docs.
 
 | Layer | Role | Update when |
 | --- | --- | --- |
-| `apps/docu/content/docs/` MDX | Architecture, ADRs, how-to | Behavior, architecture, commands, conventions, or workflow changed |
+| `apps/web/content/docs/` MDX | How to work in this repo | Behavior, commands, or conventions changed |
 | `.cursor/rules` | Short constraints | A convention the agent must not violate changed |
 | Nearest README | How to run this app/package; links only | Scripts, setup, or package purpose changed |
 

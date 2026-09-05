@@ -1,0 +1,11 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "FIRST",
+      "description": "Invoke-only factory skills: /f dispatcher plus station and role playbooks.",
+      "skills": ["f"]
+    }
+  ]
+}

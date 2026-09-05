@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "f": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "d9159235299ba7ff73bff2a886df5eae415fdce8e7ccdd4a5fbf18346dcb6c1e"
+    },
     "file-organization-v1": {
       "source": "blockmatic/basilic-skills",
       "sourceType": "github",

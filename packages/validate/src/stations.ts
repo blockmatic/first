@@ -45,3 +45,34 @@ export const articleHeadings = [
   'Spec',
   'Further Reading',
 ] as const
+
+export const templateHeadings = [
+  'Principle',
+  'Artifacts',
+  'Minimum Useful Artifact',
+  'Notes',
+] as const
+
+export const productTemplateHeadings = [
+  ...templateHeadings,
+  'Brief',
+  'Feature map',
+  'Roadmap',
+] as const
+
+export const skillFolderByStation = {
+  PRODUCT: 'f-product',
+  JOURNEYS: 'f-journeys',
+  DESIGN: 'f-designer',
+  ARCHITECTURE: 'f-architecture',
+  DATA: 'f-analyst',
+  API: 'f-api',
+  DOCUMENTATION: 'f-info-architect',
+  WORKFLOW: 'f-workflow',
+  PIPELINES: 'f-pipelines',
+  QUALITY: 'f-quality',
+  SECURITY: 'f-security',
+  OPERATIONS: 'f-operations',
+} as const
+
+export const nestedSkillFolders = [...Object.values(skillFolderByStation), 'f-ai-expert'] as const

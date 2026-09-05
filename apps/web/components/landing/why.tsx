@@ -10,8 +10,8 @@ export function Why() {
         codebase becomes the brief.
       </p>
       <p className="mt-8 max-w-xl font-display text-2xl leading-snug">
-        FIRST is a shared vocabulary. Instead of ad-hoc system prompts, you get a versionable pack
-        any harness that reads AGENTS.md can load.
+        FIRST is shared language between agents and domain experts. Product and system design land
+        as files before code. Named FIRST because it is the first thing you do.
       </p>
     </section>
   )

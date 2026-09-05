@@ -6,6 +6,7 @@ The open markdown factory for agent-first products. Twelve stations. Essays for 
 
 ```text
 _first/           factory markdown + this repo’s instance overlays
+skills/f/         catalog source for npx skills add blockmatic/first
 apps/web          landing, articles, spec, maintainer docs
 packages/ui       tokens and primitives
 packages/validate structural checks for the factory
@@ -32,7 +33,7 @@ pnpm qa
 
 ## Adopt
 
-Copy `AGENTS.md`, `ABOUT.md`, and `principles/` from `_first/` into `_first/` of your product repo. Add `FIRST.md`. Skip `instance/` and `maintainers/`. Details: [Packaging](https://github.com/blockmatic/first/blob/main/_first/maintainers/PACKAGING.md) and `/docs` on the site.
+Copy `AGENTS.md`, `ABOUT.md`, and `templates/` from `_first/` into `_first/` of your product repo. Add `FIRST.md`. Skip `instance/`, `maintainers/`, `principles/`, and `articles/`. Install with `npx skills add blockmatic/first`. Details: [Packaging](https://github.com/blockmatic/first/blob/main/_first/maintainers/PACKAGING.md) and `/docs` on the site.
 
 ## Links
 

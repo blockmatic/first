@@ -46,4 +46,4 @@ Use the same header order in `.env.local.example` and committed `.env.*`:
 ## When editing
 
 - After changing any template, verify `pnpm` dev/test for that app still loads `createEnv` without missing/empty required vars.
-- Update docs under `apps/docu/` if canonical filenames or copy instructions change.
+- Update docs under `apps/web/content/docs/` if canonical filenames or copy instructions change.

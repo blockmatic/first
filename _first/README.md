@@ -6,18 +6,18 @@ It is agent-first, not agent-autonomous. Humans still decide product scope, secu
 
 ## Who this is for
 
-- **Users of the framework** — you. Copy the user pack into `_first/` in your repo. Edit [FIRST.md](FIRST.md) and the station files you opted into. Start with this README, then [ABOUT.md](ABOUT.md).
+- **Users of the framework** — you. Install `npx skills add blockmatic/first`. Copy the user pack into `_first/` in your repo. Edit [FIRST.md](FIRST.md) and the station files you opted into (from [templates/](templates/)). Start with this README, then [ABOUT.md](ABOUT.md).
 - **Maintainers of the framework** — people evolving FIRST itself. Go to [maintainers/README.md](maintainers/README.md). Do not copy `maintainers/` or `instance/` into a product repo.
 
 ## How to read this
 
 Start with the essays in `articles/`. Each one argues why a concern has to be named before implementation, chat, or a generated UI invents it. Essays are for humans. They do not contain an agent prompt.
 
-When you want to apply that concern to a real project, open the matching file in `principles/`. Same filename. The spec is the working recipe: artifacts, steps, validation, and — last — an agent prompt you can skip if you are doing the work yourself.
+When you want to apply that concern to a real project, invoke the matching `/f-*` skill (install with `npx skills add blockmatic/first`). In this factory repo the same spec also lives in `principles/` for the site `/spec`. Same filename as the essay. The spec is the working recipe: artifacts, steps, validation, and — last — an agent prompt you can skip if you are doing the work yourself.
 
 The twelve are stations, not a waterfall and not competing religions. Read them in order the first time. After that, open the station the work is actually touching.
 
-Same filename in both folders: `articles/API.md` argues; `principles/API.md` operates. Do not merge those jobs. Do not look for `articles/index.md` or a FIRST skill.
+Same filename in both folders: `articles/API.md` argues; `principles/API.md` operates. Do not merge those jobs. Do not look for `articles/index.md`. Adopters install `/f`; they do not copy `principles/`.
 
 When a station is in scope, read the essay for the argument, then the spec if you are going to apply it. An agent skips the essay unless a human asked for the argument.
 
@@ -46,19 +46,23 @@ This is not a methodology to install. It is not a waterfall. New stations need a
 
 ## Using FIRST in another repository
 
-Copy the user pack into `_first/` at the repository root (the folder name sorts first in listings):
+Install the skill, then copy the user pack into `_first/` at the repository root (the folder name sorts first in listings):
+
+```bash
+npx skills add blockmatic/first
+```
 
 - [AGENTS.md](AGENTS.md)
 - [ABOUT.md](ABOUT.md)
-- `principles/`
+- [templates/](templates/) — copy a template only for stations listed as In
 - this README if you want the human door
 
-Optional: `articles/`. Skip `maintainers/` and `instance/`.
+Skip `principles/`, `articles/`, `maintainers/`, and `instance/`. Essays live on the site.
 
-Add [FIRST.md](FIRST.md) listing which stations are in (path to the artifact) and which are out (one-line reason). Merge a pointer into the existing root `AGENTS.md`. Do not overwrite that file. Do not copy `ABOUT.md` and `principles/` into the repository root as loose files.
+Add [FIRST.md](FIRST.md) listing which stations are in (path to the artifact) and which are out (one-line reason). Merge a pointer into the existing root `AGENTS.md`. Do not overwrite that file. Do not copy `ABOUT.md` or templates into the repository root as loose files.
 
 ```markdown
-- FIRST: `_first/AGENTS.md` then `_first/FIRST.md`; then `_first/principles/X.md` and the instance path listed in FIRST.md
+- FIRST: `_first/AGENTS.md` then `_first/ABOUT.md` then `_first/FIRST.md`; then `/f-*` and the instance path listed in FIRST.md
 ```
 
 Keep project-specific facts in `FIRST.md` and opted-in station files, or in docs those files point at. Do not edit the generic specs to encode one project's choices. Absent files beat empty stubs. Do not generate twelve skeletons.
@@ -80,7 +84,7 @@ spec: 0.2-draft
 
 When Design is in, the instance file follows [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md). Prefer `_first/DESIGN.md`. Lint with an explicit path if you use the Google CLI. Never two palettes.
 
-The target repository's instructions override generic FIRST guidance. Adopt upstream FIRST changes by replacing factory files (`AGENTS.md`, `ABOUT.md`, `principles/`) after reviewing the diff. Never overwrite `FIRST.md` or instance files.
+The target repository's instructions override generic FIRST guidance. Adopt upstream FIRST changes by replacing factory files (`AGENTS.md`, `ABOUT.md`, `templates/`) and refreshing `/f` after reviewing the diff. Never overwrite `FIRST.md` or instance files.
 
 Complete structural validation is for this source tree, not a drop-in copy. From the repository root:
 
@@ -93,4 +97,4 @@ The lint workflow runs `pnpm validate` on pull requests. Structural validation i
 
 ## Agents
 
-If you are setting up a coding agent to apply this factory, start at [AGENTS.md](AGENTS.md). Essays are optional for the agent. Specs are not. Point the agent at the target repo's own skills. There is no FIRST skill file to install.
+If you are setting up a coding agent to apply this factory, start at [AGENTS.md](AGENTS.md). Essays are optional for the agent. Specs ship as `/f-*`. Install `npx skills add blockmatic/first`.

@@ -17,7 +17,7 @@ The project has an inspectable answer to what, why, and how we will know. Non-go
 - **Fact:** [`../../README.md`](../../README.md) — FIRST factory plus Next.js site
 - **Fact:** Two audiences: **adopters** (copy the user pack into `_first/`) and **maintainers** (evolve stations, essays, site)
 - **Fact:** Not a billed SaaS. No TAM/LTV. Do not invent a marketplace of personas — that is SoulSpec, not FIRST
-- **Fact:** Observed non-goals: no CLI, no `first.json`, no registry, no FIRST skill this pass ([`../maintainers/IDEAS.md`](../maintainers/IDEAS.md))
+- **Fact:** Observed non-goals: no CLI, no `first.json`, no registry, no 13th station ([`../maintainers/IDEAS.md`](../maintainers/IDEAS.md)). `/f` via `npx skills add blockmatic/first` is in.
 - **Fact:** Site publishes `articles/` (essays) and `principles/` (templates). Instance overlays stay in git, not as a second docs site
 - **Unresolved:** GTM (channel, first successful use); success metrics that can fail (not `pnpm qa`); named decision owners
 - **Unresolved:** keep / iterate / kill board; custom domain
@@ -59,7 +59,7 @@ Product intent is documented or explicitly deferred with named owners. Implement
 
 Apply Product First to this repository.
 
-Read README, this instance, the site, and maintainer notes before proposing features. Do not invent TAM, a persona registry, or a CLI. Preserve the copy-in user pack. If the bet changes, update durable project files.
+Read README, this instance, the site, and maintainer notes before proposing features. Do not invent TAM, a persona registry, or a CLI. Preserve the copy-in user pack and the `/f` skill as portable spec. If the bet changes, update durable project files.
 
 ## Notes
 

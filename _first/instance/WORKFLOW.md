@@ -48,7 +48,7 @@ The change moved through an explicit path. Durable context reflects what was dec
 
 ## Agent Prompt
 
-Apply Workflow First to this repository. Use basilic-skills playbooks. Never `--no-verify`. Do not invent a FIRST skill.
+Apply Workflow First to this repository. Use basilic-skills playbooks and `/f-workflow`. Never `--no-verify`.
 
 ## Notes
 
