@@ -1,6 +1,6 @@
 # FIRST
 
-The open markdown factory for agent-first products. Twelve stations. Essays for humans. Specs for agents. A Next.js site that publishes both.
+The open markdown factory for agent-first products. Ten stations. Essays for humans. Specs for agents. A Next.js site that publishes both.
 
 ## Layout
 
@@ -33,7 +33,7 @@ pnpm qa
 
 ## Adopt
 
-Copy `AGENTS.md`, `ABOUT.md`, and `templates/` from `_first/` into `_first/` of your product repo. Add `FIRST.md`. Skip `instance/`, `maintainers/`, `principles/`, and `articles/`. Install with `npx skills add blockmatic/first`. Details: [Packaging](https://github.com/blockmatic/first/blob/main/_first/maintainers/PACKAGING.md) and `/docs` on the site.
+Copy `README.md`, `AGENTS.md`, `ABOUT.md`, and `templates/` from `_first/` into `_first/` of your product repo. Add `FIRST.md`. Skip `instance/`, `maintainers/`, `principles/`, and `articles/`. Install with `npx skills add blockmatic/first`. Details: [Packaging](https://github.com/blockmatic/first/blob/main/_first/maintainers/PACKAGING.md) and `/docs` on the site.
 
 ## Links
 

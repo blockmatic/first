@@ -84,7 +84,7 @@ It does not mean gating a ship on post-launch metrics you cannot observe yet. Ac
 
 It does not mean the spec never changes. It means when the spec changes, you update the file.
 
-It is not Journeys First. Product says what, why, and how we will know. How someone finishes the job is a different document.
+How someone finishes a job is part of the implementing change, not a sibling station. Product still says what, why, and how we will know.
 
 It is not API First. Desired capabilities are product. How systems communicate at a boundary is a contract.
 

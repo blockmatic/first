@@ -11,11 +11,11 @@ const tree = `repo/
     PRODUCT.md           ← opted-in instance (example)`
 
 const firstMd = `# FIRST
-spec: 0.2-draft
+spec: 0.3-draft
 
 ## In
 - product: _first/PRODUCT.md
-- design: _first/DESIGN.md
+- journeys: _first/JOURNEYS.md
 - architecture: docs/architecture.md
 
 ## Out
@@ -42,7 +42,7 @@ export function Spec() {
       </div>
       <p className="mt-6">
         <Link href="/spec" className="font-display text-sm underline underline-offset-4">
-          Browse all twelve templates
+          Browse all ten templates
         </Link>
       </p>
     </section>

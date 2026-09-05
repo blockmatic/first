@@ -90,7 +90,7 @@ describe('validateDocs', () => {
   })
 
   it('detects canonical order drift', () => {
-    replace({ relativePath: 'README.md', old: '| 4 | Architecture |', next: '| 4 | Data |' })
+    replace({ relativePath: 'README.md', old: '| 3 | Architecture |', next: '| 3 | Data |' })
     expect(validateDocs({ root: fixtureRoot })).toContain(
       'canonical station list or order is wrong: README.md',
     )

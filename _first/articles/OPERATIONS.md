@@ -46,7 +46,9 @@ Unix taste still applies: make systems easy to inspect. Fail noisily. Transparen
 
 Production agents need the same seriousness as a worker process. Identity so you know who acted. Logs so you know what they called. Retries with a budget so a loop cannot become a denial of service. If the agent is infrastructure, operate it like infrastructure. A prompt change that alters what the agent does in production is a deploy. Treat it like one: see it, support it, recover it.
 
-Verify recovery in the running system. Staging if that is what you have; production when the change is live. Pipelines got the change there. Operations confirms the plant actually improved.
+Verify recovery in the running system. Staging if that is what you have; production when the change is live. Workflow got the change there. Operations confirms the plant actually improved.
+
+A 200 OK with a useless answer is a runtime-quality blind spot. Log prompt, response, tool, and token signals at project scale. User-feedback hooks are ops instrumentation. Product still owns success events and funnels. Quality still owns scored evals. Do not put funnels on the ops dashboard.
 
 A runbook is not a wiki of wishes. It is the recovery you have already needed once, written so the next person — or the next agent — does not start from chat. If the failure has never happened, do not invent a novel. If it has, do not leave the steps in someone's head.
 
@@ -60,7 +62,7 @@ If the logs are unstructured walls of text, the agent will guess the same way a 
 
 In-product agents are production workload. If you cannot see which tool ran, with which inputs, for which user, you cannot support the feature and you cannot investigate abuse. That is operations, not a prompt tweak.
 
-The loop is the point: production signal → identify the issue → workflow routes work → implementation → pipeline deploys → operations verifies recovery. An agent can participate in that loop only if the signals exist and the verification step is named.
+The loop is the point: production signal → identify the issue → workflow routes work → implementation → workflow deploys → operations verifies recovery. An agent can participate in that loop only if the signals exist and the verification step is named.
 
 "The tests passed" is a pipeline sentence. "The error rate came back down for the users who were failing" is an operations sentence. Do not let the first steal the second.
 
@@ -68,7 +70,7 @@ The loop is the point: production signal → identify the issue → workflow rou
 
 Operations First is not a full SRE program for a side project. It is not fifty dashboards on day one.
 
-It is not Pipelines First. Pipelines deliver the change. Operations runs what was delivered. A green build is not verified recovery.
+It is not Workflow First. Workflow delivers the change. Operations runs what was delivered. A green build is not verified recovery.
 
 It is not Security First. Security sets trust and permissions. Operations observes and recovers.
 

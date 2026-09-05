@@ -2,7 +2,7 @@
 
 Operational overlays for applying FIRST to this factory-and-site repository. Not a second factory. Durable facts live in `_first/` (user pack) and `apps/web/content/docs/`.
 
-This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `ABOUT.md`, `AGENTS.md`, and `templates/` into `_first/`. Add `FIRST.md`. Install `npx skills add blockmatic/first`.
+This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `README.md`, `ABOUT.md`, `AGENTS.md`, and `templates/` into `_first/`. Add `FIRST.md`. Install `npx skills add blockmatic/first`.
 
 ## Load order
 
@@ -32,7 +32,7 @@ Required `##` headings (copy of `principleHeadings`):
 
 `Principle` · `Statement` · `Outcome` · `Artifacts` · `Minimum Useful Artifact` · `Recipe` · `Validation` · `Definition of Done` · `Agent Prompt` · `Notes`
 
-Filenames match the twelve stations in order: PRODUCT, JOURNEYS, DESIGN, ARCHITECTURE, DATA, API, DOCUMENTATION, WORKFLOW, PIPELINES, QUALITY, SECURITY, OPERATIONS.
+Filenames match the ten stations in order: PRODUCT, JOURNEYS, ARCHITECTURE, DATA, API, DOCUMENTATION, WORKFLOW, QUALITY, SECURITY, OPERATIONS.
 
 ## Link convention
 
@@ -51,16 +51,14 @@ From a station file in this folder:
 |---:|---|---|
 | 1 | Product | [PRODUCT.md](PRODUCT.md) |
 | 2 | Journeys | [JOURNEYS.md](JOURNEYS.md) |
-| 3 | Design | [DESIGN.md](DESIGN.md) |
-| 4 | Architecture | [ARCHITECTURE.md](ARCHITECTURE.md) |
-| 5 | Data | [DATA.md](DATA.md) |
-| 6 | API | [API.md](API.md) |
-| 7 | Documentation | [DOCUMENTATION.md](DOCUMENTATION.md) |
-| 8 | Workflow | [WORKFLOW.md](WORKFLOW.md) |
-| 9 | Pipelines | [PIPELINES.md](PIPELINES.md) |
-| 10 | Quality | [QUALITY.md](QUALITY.md) |
-| 11 | Security | [SECURITY.md](SECURITY.md) |
-| 12 | Operations | [OPERATIONS.md](OPERATIONS.md) |
+| 3 | Architecture | [ARCHITECTURE.md](ARCHITECTURE.md) |
+| 4 | Data | [DATA.md](DATA.md) |
+| 5 | API | [API.md](API.md) |
+| 6 | Documentation | [DOCUMENTATION.md](DOCUMENTATION.md) |
+| 7 | Workflow | [WORKFLOW.md](WORKFLOW.md) |
+| 8 | Quality | [QUALITY.md](QUALITY.md) |
+| 9 | Security | [SECURITY.md](SECURITY.md) |
+| 10 | Operations | [OPERATIONS.md](OPERATIONS.md) |
 
 Do not invent TAM, event taxonomies, or SLOs to complete a template. Label **Fact**, **Drift**, and **Unresolved** under Artifacts.
 

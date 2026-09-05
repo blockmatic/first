@@ -58,7 +58,7 @@ The agent is a principal.
 
 A coding agent can read secrets from env files, commit them, log them, or paste them into chat. It can run a destructive command because the prompt said "clean up." It can widen a permission because the feature was easier that way. None of that requires malice. It requires a missing rule.
 
-Give the agent a role: prefer read-only inspection, no unnecessary secrets, human approval for trust-boundary edits and destructive operations. That is least agency. The agent can propose a permission change. It should not merge one.
+Give the agent a role: prefer read-only inspection, no unnecessary secrets, human approval for trust-boundary edits and destructive operations. That is least agency. Defense in depth: sanitize untrusted text, constrain outputs, scope tools by the principal, least privilege on the agent identity. The agent can propose a permission change. It should not merge one.
 
 That role has to be in the project's instructions, not only in this essay. If the session inherits admin credentials because that was convenient for local development, the written rule lost. Treat the agent like a service account you would actually issue: named, narrow, logged, revocable.
 

@@ -15,34 +15,32 @@ Start with the essays in `articles/`. Each one argues why a concern has to be na
 
 When you want to apply that concern to a real project, invoke the matching `/f-*` skill (install with `npx skills add blockmatic/first`). In this factory repo the same spec also lives in `principles/` for the site `/spec`. Same filename as the essay. The spec is the working recipe: artifacts, steps, validation, and — last — an agent prompt you can skip if you are doing the work yourself.
 
-The twelve are stations, not a waterfall and not competing religions. Read them in order the first time. After that, open the station the work is actually touching.
+The ten are stations, not a waterfall and not competing religions. Read them in order the first time. After that, open the station the work is actually touching.
 
 Same filename in both folders: `articles/API.md` argues; `principles/API.md` operates. Do not merge those jobs. Do not look for `articles/index.md`. Adopters install `/f`; they do not copy `principles/`.
 
 When a station is in scope, read the essay for the argument, then the spec if you are going to apply it. An agent skips the essay unless a human asked for the argument.
 
-## The twelve
+## The ten
 
 Each station has a human essay and an operational spec. Read the essay to understand the argument; use the spec to do the work.
 
 | # | Station | Human essay | Operational spec | Owns |
 |---:|---|---|---|---|
 | 1 | Product | [Read](articles/PRODUCT.md) | [Apply](principles/PRODUCT.md) | What, why, audience, GTM, and how we will know |
-| 2 | Journeys | [Read](articles/JOURNEYS.md) | [Apply](principles/JOURNEYS.md) | Actors, states, permissions, errors, and completion |
-| 3 | Design | [Read](articles/DESIGN.md) | [Apply](principles/DESIGN.md) | How the interface behaves and communicates |
-| 4 | Architecture | [Read](articles/ARCHITECTURE.md) | [Apply](principles/ARCHITECTURE.md) | System boundaries, dependency direction, and deployment shape |
-| 5 | Data | [Read](articles/DATA.md) | [Apply](principles/DATA.md) | Canonical domain concepts, ownership, lifecycle, and evolution |
-| 6 | API | [Read](articles/API.md) | [Apply](principles/API.md) | Capability and contract boundaries |
-| 7 | Documentation | [Read](articles/DOCUMENTATION.md) | [Apply](principles/DOCUMENTATION.md) | Durable, accurate, discoverable context |
-| 8 | Workflow | [Read](articles/WORKFLOW.md) | [Apply](principles/WORKFLOW.md) | Actors, handoffs, work state, and human gates |
-| 9 | Pipelines | [Read](articles/PIPELINES.md) | [Apply](principles/PIPELINES.md) | Automated validation and delivery |
-| 10 | Quality | [Read](articles/QUALITY.md) | [Apply](principles/QUALITY.md) | Acceptance, tests, evals, and budgets |
-| 11 | Security | [Read](articles/SECURITY.md) | [Apply](principles/SECURITY.md) | Trust, authorization, secrets, and agent permissions |
-| 12 | Operations | [Read](articles/OPERATIONS.md) | [Apply](principles/OPERATIONS.md) | Runtime health, support, and recovery |
+| 2 | Journeys | [Read](articles/JOURNEYS.md) | [Apply](principles/JOURNEYS.md) | Actors, states, permissions, errors, completion, and interface expression |
+| 3 | Architecture | [Read](articles/ARCHITECTURE.md) | [Apply](principles/ARCHITECTURE.md) | System boundaries, dependency direction, and deployment shape |
+| 4 | Data | [Read](articles/DATA.md) | [Apply](principles/DATA.md) | Canonical domain concepts, ownership, lifecycle, and evolution |
+| 5 | API | [Read](articles/API.md) | [Apply](principles/API.md) | Capability and contract boundaries |
+| 6 | Documentation | [Read](articles/DOCUMENTATION.md) | [Apply](principles/DOCUMENTATION.md) | Durable, accurate, discoverable context |
+| 7 | Workflow | [Read](articles/WORKFLOW.md) | [Apply](principles/WORKFLOW.md) | Actors, handoffs, work state, gates, and automated delivery |
+| 8 | Quality | [Read](articles/QUALITY.md) | [Apply](principles/QUALITY.md) | Acceptance, tests, evals, and budgets |
+| 9 | Security | [Read](articles/SECURITY.md) | [Apply](principles/SECURITY.md) | Trust, authorization, secrets, and agent permissions |
+| 10 | Operations | [Read](articles/OPERATIONS.md) | [Apply](principles/OPERATIONS.md) | Runtime health, support, and recovery |
 
 The map of stations, loops, and boundaries is [ABOUT.md](ABOUT.md). That file is for both audiences. It is not another essay.
 
-This is not a methodology to install. It is not a waterfall. New stations need a distinctive decision they own; a shared theme or a new tool is not enough. Events remain Product, external contracts remain API, eval datasets remain Quality, telemetry remains Operations, and the commit-stage build remains Pipelines.
+This is not a methodology to install. It is not a waterfall. New stations need a distinctive decision they own; a shared theme or a new tool is not enough. Events remain Product, external contracts remain API, eval datasets remain Quality, telemetry remains Operations, and the commit-stage build remains Workflow.
 
 ## Using FIRST in another repository
 
@@ -65,24 +63,24 @@ Add [FIRST.md](FIRST.md) listing which stations are in (path to the artifact) an
 - FIRST: `_first/AGENTS.md` then `_first/ABOUT.md` then `_first/FIRST.md`; then `/f-*` and the instance path listed in FIRST.md
 ```
 
-Keep project-specific facts in `FIRST.md` and opted-in station files, or in docs those files point at. Do not edit the generic specs to encode one project's choices. Absent files beat empty stubs. Do not generate twelve skeletons.
+Keep project-specific facts in `FIRST.md` and opted-in station files, or in docs those files point at. Do not edit the generic specs to encode one project's choices. Absent files beat empty stubs. Do not generate ten skeletons.
 
 Example `FIRST.md`:
 
 ```markdown
 # FIRST
-spec: 0.2-draft
+spec: 0.3-draft
 
 ## In
 - product: _first/PRODUCT.md
-- design: _first/DESIGN.md
+- journeys: _first/JOURNEYS.md
 - architecture: docs/architecture.md
 
 ## Out
 - operations — not in production
 ```
 
-When Design is in, the instance file follows [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md). Prefer `_first/DESIGN.md`. Lint with an explicit path if you use the Google CLI. Never two palettes.
+When Journeys includes a visual identity file, that artifact follows [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md). Prefer `_first/DESIGN.md`. Lint with an explicit path if you use the Google CLI. Never two palettes. It is a Journeys artifact, not a station.
 
 The target repository's instructions override generic FIRST guidance. Adopt upstream FIRST changes by replacing factory files (`AGENTS.md`, `ABOUT.md`, `templates/`) and refreshing `/f` after reviewing the diff. Never overwrite `FIRST.md` or instance files.
 

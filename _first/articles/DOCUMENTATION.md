@@ -56,7 +56,7 @@ Docs-as-code is the delivery mechanism, not the principle. Markdown in the repo 
 
 Chat is a terrible system of record for an actor that starts every session empty.
 
-Agent instructions, skills, and ADRs are how you give an agent a project it can actually read. Updating those files when behavior changes is how you stop the next session from "correcting" the product back to an old README.
+Agent instructions, skills, ADRs, prompt templates, and behavioral specs are how you give an agent a project it can actually read. Those prompt files are versioned project files, not chat. Quality already owns eval datasets. Workflow already runs CI. Updating those files when behavior changes is how you stop the next session from "correcting" the product back to an old README.
 
 Delegation is easier when the agent can be told "read these files first" instead of receiving a recap of the company. Validation is easier when the agent is required to update the durable context in the same change.
 
