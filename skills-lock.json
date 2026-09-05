@@ -1,6 +1,11 @@
 {
   "version": 1,
   "skills": {
+    "b": {
+      "source": "../basilic-skills",
+      "sourceType": "local",
+      "computedHash": "9c83dc85534592382478ee0d886a0430722f641e68c4d7975182f150a5b55f88"
+    },
     "f": {
       "source": ".",
       "sourceType": "local",
@@ -19,10 +24,9 @@
       "computedHash": "b88872a00592c6962be2e87aacf19c8fcaba04d24dc16adbdce40bd981d23ad3"
     },
     "next-v16": {
-      "source": "blockmatic/basilic-skills",
-      "sourceType": "github",
-      "skillPath": "skills/next-v16/SKILL.md",
-      "computedHash": "230365194e69a6949797349b54aeaaca3b6db4c91c5351d278a0293cdbad85c5"
+      "source": "../basilic-skills",
+      "sourceType": "local",
+      "computedHash": "cc26706e21057639f9d131ebf7ee903b5bdf1dfa66f8ccaca43737aee11df66b"
     },
     "nuqs-v2": {
       "source": "blockmatic/basilic-skills",
@@ -53,12 +57,6 @@
       "sourceType": "github",
       "skillPath": "skills/vitest-v4/SKILL.md",
       "computedHash": "26600524df910f688aeb75856b8ec457fe72250947e61f8fc8ba47d8bd8bb1c9"
-    },
-    "workflow": {
-      "source": "blockmatic/basilic-skills",
-      "sourceType": "github",
-      "skillPath": "skills/workflow/SKILL.md",
-      "computedHash": "634035249f98ddaa65542d282a0a3d2ab87dd7ae8113c3a45dda7fd94aa5414b"
     }
   }
 }
