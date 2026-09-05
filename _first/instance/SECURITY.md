@@ -2,15 +2,7 @@
 
 ## Principle
 
-Name what we are trusting, protecting, exposing, and allowing — including the agent as a principal — before features accumulate implicit trust.
-
-## Statement
-
-I treat trust as a design decision. Secrets, public surfaces, and agent permissions should be explicit. This site has no user accounts; the threat model is still real: leaked tokens, prompt injection via markdown, and over-broad agent write access.
-
-## Outcome
-
-Public vs private is clear. Secrets stay in Vercel/GitHub. Agents have human gates for destructive and trust-boundary edits. Factory markdown is treated as executable instruction for adopters’ agents.
+See /f-security.
 
 ## Artifacts
 
@@ -29,27 +21,8 @@ Public vs private is clear. Secrets stay in Vercel/GitHub. Agents have human gat
 - agent: human gates in `_first/AGENTS.md`
 - classification: factory = public; `.env.local` = private
 
-## Recipe
-
-1. Inspect workflows, Vercel env, and AGENTS.md gates.
-2. Do not add auth to complete this template.
-3. Treat principle/article edits as security-relevant instruction changes.
-
-## Validation
-
-- No committed secrets.
-- Human gates remain in factory AGENTS.md even if SECURITY.md is unread.
-
-## Definition of Done
-
-Trust boundaries match what shipped. Agent permissions are the markdown + site, not production data.
-
-## Agent Prompt
-
-Apply Security First to this repository. There is no session cookie. Do not port Basilic auth. Review factory markdown as agent instructions.
-
 ## Notes
 
-**Security vs API:** Security owns who may. API owns how denial would appear — here, it does not; routes are public.
+Security owns who may. API owns how denial would appear — here it does not; routes are public. There is no session cookie. Do not port Basilic auth. Treat principle/article edits as instruction changes.
 
 **Navigation:** [Generic spec](../principles/SECURITY.md) · [Human essay](../articles/SECURITY.md) · [Factory map](../ABOUT.md)

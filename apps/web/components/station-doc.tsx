@@ -31,7 +31,7 @@ export function StationDoc({
       <p className="mt-3 text-muted-foreground">{description}</p>
       <p className="mt-6 flex gap-4 font-display text-sm">
         <Link href={indexHref} className="underline underline-offset-4">
-          All {kind === 'articles' ? 'essays' : 'templates'}
+          All {kind === 'articles' ? 'essays' : 'specs'}
         </Link>
         <Link href={other} className="underline underline-offset-4">
           {otherLabel}

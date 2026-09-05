@@ -6,7 +6,7 @@ import { baseOptions } from '@/lib/layout.shared'
 
 export const metadata: Metadata = {
   title: 'Spec',
-  description: 'Operational templates for each FIRST station.',
+  description: 'Operational specs for each FIRST station.',
 }
 
 export default function SpecIndexPage() {
@@ -15,10 +15,10 @@ export default function SpecIndexPage() {
     <HomeLayout {...baseOptions()}>
       <div className="mx-auto w-full max-w-3xl px-6 py-16">
         <p className="font-mono text-xs tracking-[0.3em] uppercase text-muted-foreground">Spec</p>
-        <h1 className="font-display mt-3 text-4xl">Templates you copy into _first/</h1>
+        <h1 className="font-display mt-3 text-4xl">Operational specs for each station</h1>
         <p className="mt-4 text-muted-foreground">
-          Copy <code>principles/</code> as vendor files. Do not encode one product’s facts into
-          them.
+          Factory <code>principles/</code> published here. Agents apply them as <code>/f-*</code>.
+          Do not encode one product’s facts into the specs. Adopters do not copy this folder.
         </p>
         <ol className="mt-10 space-y-4">
           {items.map((item, index) => (

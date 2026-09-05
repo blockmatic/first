@@ -1,6 +1,6 @@
 # @repo/web
 
-Public FIRST site: landing, articles, operational templates, and maintainer docs.
+Public FIRST site: landing, articles, operational specs, and maintainer docs.
 
 ## Commands
 

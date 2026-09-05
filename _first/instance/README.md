@@ -30,7 +30,7 @@ Required overlay `##` headings (see [`../ABOUT.md`](../ABOUT.md)):
 
 `Principle` · `Artifacts` · `Minimum Useful Artifact` · `Notes`
 
-Product may add `Brief` · `Feature map` · `Roadmap` after Notes. Do **not** paste Recipe, Statement, Outcome, Validation, Definition of Done, or Agent Prompt from `../principles/X.md`. Files in this folder may still carry those full spec headings until a thinning pass. Do not teach this folder to `@repo/validate`.
+Product may add `Brief` · `Feature map` · `Roadmap` after Notes. Do **not** paste Recipe, Statement, Outcome, Validation, Definition of Done, or Agent Prompt from `../principles/X.md`. Do not teach this folder to `@repo/validate`.
 
 Filenames match the ten stations in order: PRODUCT, JOURNEYS, ARCHITECTURE, DATA, API, DOCUMENTATION, WORKFLOW, QUALITY, SECURITY, OPERATIONS.
 

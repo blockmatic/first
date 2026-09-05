@@ -13,6 +13,5 @@ The public site (What / Why / Spec / Get started) is `apps/web` in this reposito
 
 ## Not now
 
-- Generating a Basilic Google-format `DESIGN.md` from `packages/ui` tokens. `tokens.css` remains source of truth until a real file is written on purpose.
 - Renaming `_first/` to `first/`.
 - Shipping a FIRST CLI, `first.json`, or a skill that mixes spec and instance (refresh would clobber product facts). `/f` as a portable spec is in.

@@ -40,7 +40,7 @@ export function Spec() {
       </div>
       <p className="mt-6">
         <Link href="/spec" className="font-display text-sm underline underline-offset-4">
-          Browse all ten templates
+          Browse all ten specs
         </Link>
       </p>
     </section>
