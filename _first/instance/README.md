@@ -2,7 +2,7 @@
 
 Operational overlays for applying FIRST to this factory-and-site repository. Not a second factory. Durable facts live in `_first/` (user pack) and `apps/web/content/docs/`.
 
-This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `README.md`, `ABOUT.md`, `AGENTS.md`, and `templates/` into `_first/`. Add `FIRST.md`. Install `npx skills add blockmatic/first`.
+This folder is this repository’s adoption pack. When copying FIRST into another repo, skip this directory and `maintainers/`. Copy `README.md`, `ABOUT.md`, and `AGENTS.md` into `_first/`. Add `FIRST.md`. Write overlays only for stations listed as In. Install `npx skills add blockmatic/first`. Overlay headings: [`../ABOUT.md`](../ABOUT.md) (Overlay contract).
 
 ## Load order
 
@@ -26,11 +26,11 @@ Use `/f-*` for the operational spec. Essays stay on the site.
 
 ## Format sync
 
-When `../principles/` headings change, update every station file here in the same session. Do not teach this folder to `@repo/validate`.
+Required overlay `##` headings (see [`../ABOUT.md`](../ABOUT.md)):
 
-Required `##` headings (copy of `principleHeadings`):
+`Principle` · `Artifacts` · `Minimum Useful Artifact` · `Notes`
 
-`Principle` · `Statement` · `Outcome` · `Artifacts` · `Minimum Useful Artifact` · `Recipe` · `Validation` · `Definition of Done` · `Agent Prompt` · `Notes`
+Product may add `Brief` · `Feature map` · `Roadmap` after Notes. Do **not** paste Recipe, Statement, Outcome, Validation, Definition of Done, or Agent Prompt from `../principles/X.md`. Files in this folder may still carry those full spec headings until a thinning pass. Do not teach this folder to `@repo/validate`.
 
 Filenames match the ten stations in order: PRODUCT, JOURNEYS, ARCHITECTURE, DATA, API, DOCUMENTATION, WORKFLOW, QUALITY, SECURITY, OPERATIONS.
 
@@ -60,9 +60,8 @@ From a station file in this folder:
 | 9 | Security | [SECURITY.md](SECURITY.md) |
 | 10 | Operations | [OPERATIONS.md](OPERATIONS.md) |
 
-Do not invent TAM, event taxonomies, or SLOs to complete a template. Label **Fact**, **Drift**, and **Unresolved** under Artifacts.
+Do not invent TAM, event taxonomies, or SLOs to complete an overlay. Label **Fact**, **Drift**, and **Unresolved** under Artifacts.
 
 ## Overlay as delta
 
-Keep the required `##` headings. Fill Artifacts with pointers and facts. Do **not** paste the generic Recipe, Agent Prompt, or Statement from `../principles/X.md`. If the durable brief already lives in `apps/web/content/docs/`, the overlay points there.
-
+Keep the overlay headings. Fill Artifacts with pointers and facts. If the durable brief already lives in `apps/web/content/docs/`, the overlay points there.

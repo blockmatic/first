@@ -5,11 +5,9 @@ import {
   maintainerFiles,
   nestedSkillFolders,
   principleHeadings,
-  productTemplateHeadings,
   rootFiles,
   skillFolderByStation,
   stations,
-  templateHeadings,
 } from './stations.ts'
 
 const linkPattern = /\[[^\]]+\]\(([^)]+)\)/g
@@ -161,26 +159,6 @@ function checkLocalLinks({ root, errors }: { root: string; errors: string[] }) {
   }
 }
 
-function checkTemplates({ root, errors }: { root: string; errors: string[] }) {
-  const dir = resolve(root, 'templates')
-  if (!existsSync(dir)) {
-    errors.push('missing templates/')
-    return
-  }
-  for (const name of stations) {
-    const path = resolve(dir, `${name}.md`)
-    if (!existsSync(path)) {
-      errors.push(`missing template: templates/${name}.md`)
-      continue
-    }
-    const text = readFileSync(path, 'utf8')
-    const headings = name === 'PRODUCT' ? productTemplateHeadings : templateHeadings
-    for (const heading of headings)
-      if (section(text, heading) === null)
-        errors.push(`missing heading '${heading}': templates/${name}.md`)
-  }
-}
-
 function parseSkillFrontmatter(content: string) {
   const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/)
   if (!match) return null
@@ -219,8 +197,9 @@ function checkSkillsCatalog({
     return
   }
   const parent = parseSkillFrontmatter(readFileSync(parentPath, 'utf8'))
-  if (!parent) errors.push('missing YAML frontmatter: skills/f/SKILL.md')
-  else {
+  if (!parent) {
+    errors.push('missing YAML frontmatter: skills/f/SKILL.md')
+  } else {
     if (parent.name !== 'f') errors.push('name must equal folder: skills/f/SKILL.md')
     if (parent.disableModelInvocation !== 'true')
       errors.push('disable-model-invocation must be true: skills/f/SKILL.md')
@@ -275,7 +254,6 @@ export function validateDocs({ root, repoRoot }: { root: string; repoRoot?: stri
   checkStationFiles({ root, errors })
   checkCanonicalOrder({ root, errors })
   checkLocalLinks({ root, errors })
-  checkTemplates({ root, errors })
   if (repoRoot) checkSkillsCatalog({ repoRoot, firstRoot: root, errors })
   return errors
 }

@@ -15,5 +15,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `FIRST documentation validation passed: ${stations.length} essay/spec pairs, templates, /f skill catalog, FIRST.md, maintainer files, required structure, parity, order, and local links.`,
+  `FIRST documentation validation passed: ${stations.length} essay/spec pairs, /f skill catalog, FIRST.md, maintainer files, required structure, parity, order, and local links.`,
 )

@@ -8,8 +8,8 @@ const files = [
     role: 'Canonical map of stations, loops, and boundaries. Shared by humans and agents.',
   },
   {
-    name: 'templates/',
-    role: 'Empty overlay structs. Copy only the stations you opted into, then fill facts.',
+    name: 'overlays',
+    role: 'Deltas for stations listed as In. Fact, Drift, Unresolved — not a second copy of /f-*.',
   },
   {
     name: '/f-*',

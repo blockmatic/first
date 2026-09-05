@@ -14,9 +14,8 @@ export function GetStarted() {
           Run <code>npx skills add blockmatic/first</code>.
         </li>
         <li>
-          Copy <code>AGENTS.md</code>, <code>ABOUT.md</code>, and <code>templates/</code> into{' '}
-          <code>_first/</code> at your repository root. Copy a template only for stations listed as
-          In.
+          Copy <code>AGENTS.md</code> and <code>ABOUT.md</code> into <code>_first/</code> at your
+          repository root. Write an overlay only for stations listed as In.
         </li>
         <li>
           Create <code>FIRST.md</code> listing stations in (path) and out (one-line reason). Absent

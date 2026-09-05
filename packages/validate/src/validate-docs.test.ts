@@ -15,7 +15,7 @@ describe('validateDocs', () => {
     fixtureRoot = mkdtempSync(resolve(tmpdir(), 'first-docs-'))
     for (const name of ['README.md', 'ABOUT.md', 'AGENTS.md', 'FIRST.md'])
       cpSync(resolve(sourceRoot, name), resolve(fixtureRoot, name))
-    for (const name of ['articles', 'principles', 'maintainers', 'instance', 'templates'])
+    for (const name of ['articles', 'principles', 'maintainers', 'instance'])
       cpSync(resolve(sourceRoot, name), resolve(fixtureRoot, name), { recursive: true })
   })
 

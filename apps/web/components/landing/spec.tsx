@@ -5,10 +5,8 @@ const tree = `repo/
   _first/
     FIRST.md             ← instance map (required)
     AGENTS.md            ← load order + gates
-    ABOUT.md             ← station map
-    principles/          ← operational templates
-    articles/            ← optional essays
-    PRODUCT.md           ← opted-in instance (example)`
+    ABOUT.md             ← station map + overlay contract
+    PRODUCT.md           ← opted-in overlay (example)`
 
 const firstMd = `# FIRST
 spec: 0.3-draft

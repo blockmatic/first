@@ -19,10 +19,9 @@ Into `_first/` at the adopting repository root:
 
 - `AGENTS.md`
 - `ABOUT.md`
-- `templates/` — copy a template only for stations listed as In
 - `README.md` if you want the human door
 
-Create `FIRST.md`. Merge a pointer into existing root `AGENTS.md`. Do not overwrite that file.
+Create `FIRST.md`. Write overlays only for stations listed as In (headings in [ABOUT](https://github.com/blockmatic/first/blob/main/_first/ABOUT.md)). Merge a pointer into existing root `AGENTS.md`. Do not overwrite that file.
 
 ## Skip
 
@@ -36,7 +35,7 @@ Create `FIRST.md`. Merge a pointer into existing root `AGENTS.md`. Do not overwr
 
 | File | Who | Update from upstream |
 | --- | --- | --- |
-| `_first/AGENTS.md`, `ABOUT.md`, `templates/` | User copies; maintainer authors | Replace after reviewing the diff |
+| `_first/AGENTS.md`, `ABOUT.md` | User copies; maintainer authors | Replace after reviewing the diff |
 | `.agents/skills/f/` | User installs | Refresh via the skills CLI |
 | `_first/FIRST.md`, opted-in station files | User edits | Never overwrite |
 | Root `AGENTS.md` | User merges a pointer | Never overwrite the rest |

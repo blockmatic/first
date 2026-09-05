@@ -1,7 +1,7 @@
 # First Principles
 
 Version: 0.3-draft  
-Last reviewed: 2026-09-04
+Last reviewed: 2026-09-05
 
 Some decisions are too consequential to become afterthoughts. Important project knowledge should live in files, not disappear into conversations.
 
@@ -11,7 +11,7 @@ This is an agent-first factory, not an agent-autonomous one. Humans still decide
 
 ## Who this is for
 
-- **Users of the framework** — adopting FIRST in a product repo. Install `npx skills add blockmatic/first`. Copy the user pack into `_first/`. Edit [FIRST.md](FIRST.md) and opted-in station files from [templates/](templates/). Merge a pointer into root `AGENTS.md`.
+- **Users of the framework** — adopting FIRST in a product repo. Install `npx skills add blockmatic/first`. Copy the user pack into `_first/`. Edit [FIRST.md](FIRST.md) and write overlays only for stations listed as In. Merge a pointer into root `AGENTS.md`.
 - **Maintainers of the framework** — evolving FIRST itself. Start at [`blockmatic/first` maintainers](https://github.com/blockmatic/first/blob/main/_first/maintainers/README.md). Do not copy `maintainers/` or `instance/`.
 
 ## Dual audience (minimum)
@@ -42,7 +42,6 @@ npx skills add blockmatic/first
 - [AGENTS.md](AGENTS.md)
 - [ABOUT.md](ABOUT.md) (this file)
 - [README.md](README.md) if you want the human door
-- [templates/](templates/) — copy only stations listed as In
 - [FIRST.md](FIRST.md) — create this; list in and out
 
 [README.md](README.md) and `articles/` are the human pack in this factory. They are not required for an agent to operate. Do not copy `principles/` or `articles/` into an adopter repo. Skip `maintainers/` and `instance/`. Layout and why: [PACKAGING.md](https://github.com/blockmatic/first/blob/main/_first/maintainers/PACKAGING.md).
@@ -55,10 +54,23 @@ User pack — copy these (plus `FIRST.md` you create):
 |---|---|---|
 | [README.md](README.md) | Users, humans | Front door, copy instructions, station index |
 | [AGENTS.md](AGENTS.md) | Users, agents | Load order, operating rules, reusable prompt |
-| [ABOUT.md](ABOUT.md) | Users, both | Canonical map of stations, loops, and boundaries |
+| [ABOUT.md](ABOUT.md) | Users, both | Canonical map of stations, loops, boundaries, overlay contract |
 | [FIRST.md](FIRST.md) | Users, both | This repo’s in/out map and instance paths |
-| [templates/](templates/) | Users applying | Empty overlay structs; copy only opted-in stations |
 | Installed `/f-*` | Users applying and agents operating | Operational spec (copy of `principles/X.md` in this factory) |
+
+## Overlay contract
+
+Overlays are deltas, not a second copy of `/f-*`. Create a file only for a station listed as In. Absent files beat empty stubs. Do not generate ten skeletons.
+
+Required `##` headings:
+
+`Principle` · `Artifacts` · `Minimum Useful Artifact` · `Notes`
+
+- **Principle:** `See /f-<station>`.
+- **Artifacts:** label **Fact**, **Drift**, and **Unresolved**. Point at canonical docs. Do not paste Recipe, Statement, Outcome, Validation, Definition of Done, or Agent Prompt from the spec.
+- Product may add `Brief` · `Feature map` · `Roadmap` after Notes when the overlay is also the canonical brief.
+
+`FIRST.md` In keys are the ten stations. A Google-format `DESIGN.md` is a Journeys artifact, not a station; point at it under Journeys when the file exists.
 
 Factory-only (do not copy into an adopter repo): `articles/X.md` and `principles/X.md`. Essays argue; principles operate. Same filenames.
 

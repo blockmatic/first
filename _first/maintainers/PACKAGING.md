@@ -4,7 +4,7 @@ How FIRST is laid out on disk, who edits which files, and which external formats
 
 ## Two people
 
-- **User** — adopting FIRST in a product repo. Installs `npx skills add blockmatic/first`. Copies the user pack into `_first/`, edits `FIRST.md` and instance files from templates, merges a pointer into root `AGENTS.md`.
+- **User** — adopting FIRST in a product repo. Installs `npx skills add blockmatic/first`. Copies the user pack into `_first/`, edits `FIRST.md` and writes overlays for stations that are In, merges a pointer into root `AGENTS.md`.
 - **Maintainer** — evolving FIRST itself. Work lives in this folder, `../../packages/validate/`, `../articles/`, `../principles/`, and `../../skills/f/`.
 
 Human vs agent is a second axis: `README.md` and `articles/` for humans; `AGENTS.md` and installed `/f-*` skills for agents; `ABOUT.md` for both.
@@ -20,7 +20,7 @@ Borrow shape, not identity.
 
 1. **Harness** — root `AGENTS.md` (this repo also has `CLAUDE.md` pointing at it). Project commands, skills, rules. Merge a FIRST pointer. Do not replace the file.
 2. **Factory spec (installed skill)** — `.agents/skills/f/` from `npx skills add blockmatic/first`. Refreshable. Generic Recipe and Agent Prompt live here, not in the adopter overlay.
-3. **Instance** — `_first/FIRST.md` plus filled station files (copied from `templates/` for stations that are In). Never overwritten by skill refresh.
+3. **Instance** — `_first/FIRST.md` plus filled station files for stations that are In. Never overwritten by skill refresh. Overlay headings live in [ABOUT.md](../ABOUT.md).
 
 The human pack (`README.md`, `articles/` on the site) is optional for adopters. `principles/` stays in this factory repo as the canonical spec the site `/spec` and skill `references/spec.md` copy. Adopters do not copy `principles/`.
 
@@ -37,14 +37,13 @@ repo/
     AGENTS.md
     ABOUT.md
     FIRST.md                # USER instance map
-    templates/              # empty structs; copy only opted-in stations
     instance/               # this repo’s dogfood overlays only
     maintainers/            # MAINTAINER — do not copy
     articles/               # factory source; site publishes; do not copy
     principles/             # factory source; do not copy
 ```
 
-Copy for a new user repo: `AGENTS.md`, `ABOUT.md`, `templates/`, and this README if they want the human door. They add `FIRST.md` and copy only opted-in templates into instance files. Skip `maintainers/`, `instance/`, `principles/`, and `articles/`. Install `npx skills add blockmatic/first`.
+Copy for a new user repo: `AGENTS.md`, `ABOUT.md`, and this README if they want the human door. They add `FIRST.md` and write overlays only for stations listed as In. Skip `maintainers/`, `instance/`, `principles/`, and `articles/`. Install `npx skills add blockmatic/first`.
 
 ## Why root AGENTS.md points in
 
@@ -68,7 +67,7 @@ Do not load `maintainers/` on a product task.
 
 Markdown analogue of SoulSpec’s `soul.json`. Lists which stations are in (path to the artifact), which are out (one-line reason). Paths may point outside `_first/` when the project already has a canonical doc.
 
-Absent files beat unused templates. Copy a template only for stations listed as In. Human gates (product scope, security-sensitive changes, destructive operations) still apply when `SECURITY.md` is absent — they stay in factory `AGENTS.md`.
+Absent files beat unused overlays. Write a station file only when it is listed as In. Human gates (product scope, security-sensitive changes, destructive operations) still apply when `SECURITY.md` is absent — they stay in factory `AGENTS.md`.
 
 When the project has a visual identity file, point at one `DESIGN.md`, not a station. Prefer `_first/DESIGN.md`. Lint with an explicit path: `npx @google/design.md lint _first/DESIGN.md`. A root `DESIGN.md` only if existing tooling requires it; then `FIRST.md` points at that one file. Never two palettes.
 
@@ -76,7 +75,7 @@ Google `DESIGN.md` may omit sections via YAML `omitted` with a reason. Unknown h
 
 ## Overlay as delta
 
-Instance files (`instance/` here, `_first/<product>/` in an adopter) are **deltas**: Fact, Drift, Unresolved, and pointers to canonical docs. Start from `_first/templates/`. They do **not** clone the generic Recipe, Agent Prompt, or Statement. Product may add Brief, Feature map, and Roadmap after Notes when the overlay is also the canonical brief.
+Instance files (`instance/` here, `_first/<product>/` in an adopter) are **deltas**: Fact, Drift, Unresolved, and pointers to canonical docs. Headings: Principle (`See /f-<station>`), Artifacts, Minimum Useful Artifact, Notes. They do **not** clone the generic Recipe, Agent Prompt, or Statement. Product may add Brief, Feature map, and Roadmap after Notes when the overlay is also the canonical brief.
 
 `FIRST.md` may point at existing docs in the adopting repository instead of a long overlay.
 
@@ -88,7 +87,6 @@ Replace from this repo after reviewing the diff. Never overwrite the adopter’s
 |---|---|---|
 | `_first/AGENTS.md` | `_first/AGENTS.md` | Replace |
 | `_first/ABOUT.md` | `_first/ABOUT.md` | Replace |
-| `_first/templates/` | `_first/templates/` | Optional replace (empty structs only) |
 | `.agents/skills/f/` | `skills/f/` via `npx skills add blockmatic/first` | Refresh |
 | `_first/README.md` | `_first/README.md` | Optional replace |
 | `_first/articles/` | — | Do not copy; GitHub / site |
@@ -106,7 +104,7 @@ Replace from this repo after reviewing the diff. Never overwrite the adopter’s
 
 | File | Who | Update from upstream |
 |---|---|---|
-| `_first/AGENTS.md`, `ABOUT.md`, `templates/` | User copies; maintainer authors | Replace after reviewing the diff |
+| `_first/AGENTS.md`, `ABOUT.md` | User copies; maintainer authors | Replace after reviewing the diff |
 | `.agents/skills/f/` | User installs | Refresh via skills CLI |
 | `_first/FIRST.md`, opted-in station files | User edits | Never overwrite |
 | Root `AGENTS.md` | User merges a pointer | Never overwrite the rest |

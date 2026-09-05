@@ -7,7 +7,7 @@ Development is **Cursor-first**. Claude Code follows the same rules and skills v
 
 ## Layout
 
-- `_first/` — factory markdown (articles, principles, ABOUT, AGENTS, templates) plus this repo’s `instance/` overlays and `FIRST.md`
+- `_first/` — factory markdown (articles, principles, ABOUT, AGENTS) plus this repo’s `instance/` overlays and `FIRST.md`
 - `skills/f/` — catalog source for `npx skills add blockmatic/first`
 - `apps/web` — Next.js 16 site (landing, articles, spec, these docs)
 - `packages/ui` — slim tokens and button
@@ -55,7 +55,7 @@ Commit `skills-lock.json` with `.agents/skills/`.
 
 | Path | Who | Upstream update |
 | --- | --- | --- |
-| `_first/articles`, `_first/principles`, `skills/f/`, `_first/AGENTS.md`, `_first/ABOUT.md`, `_first/templates/` | Maintainers | Adopters replace pack files after reviewing the diff; refresh `/f` with the skills CLI |
+| `_first/articles`, `_first/principles`, `skills/f/`, `_first/AGENTS.md`, `_first/ABOUT.md` | Maintainers | Adopters replace pack files after reviewing the diff; refresh `/f` with the skills CLI |
 | `_first/FIRST.md`, `_first/instance/` | Maintainers of *this* product | Adopters never copy |
 | `apps/web` | Maintainers | Site only |
 | Adopter `_first/FIRST.md` and instance files | Adopters | Never overwrite from upstream |

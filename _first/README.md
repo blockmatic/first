@@ -6,7 +6,7 @@ It is agent-first, not agent-autonomous. Humans still decide product scope, secu
 
 ## Who this is for
 
-- **Users of the framework** — you. Install `npx skills add blockmatic/first`. Copy the user pack into `_first/` in your repo. Edit [FIRST.md](FIRST.md) and the station files you opted into (from [templates/](templates/)). Start with this README, then [ABOUT.md](ABOUT.md).
+- **Users of the framework** — you. Install `npx skills add blockmatic/first`. Copy the user pack into `_first/` in your repo. Edit [FIRST.md](FIRST.md) and write overlays only for stations listed as In. Start with this README, then [ABOUT.md](ABOUT.md).
 - **Maintainers of the framework** — people evolving FIRST itself. Go to [maintainers/README.md](maintainers/README.md). Do not copy `maintainers/` or `instance/` into a product repo.
 
 ## How to read this
@@ -52,12 +52,11 @@ npx skills add blockmatic/first
 
 - [AGENTS.md](AGENTS.md)
 - [ABOUT.md](ABOUT.md)
-- [templates/](templates/) — copy a template only for stations listed as In
 - this README if you want the human door
 
 Skip `principles/`, `articles/`, `maintainers/`, and `instance/`. Essays live on the site.
 
-Add [FIRST.md](FIRST.md) listing which stations are in (path to the artifact) and which are out (one-line reason). Merge a pointer into the existing root `AGENTS.md`. Do not overwrite that file. Do not copy `ABOUT.md` or templates into the repository root as loose files.
+Add [FIRST.md](FIRST.md) listing which stations are in (path to the artifact) and which are out (one-line reason). Merge a pointer into the existing root `AGENTS.md`. Do not overwrite that file. Do not copy `ABOUT.md` into the repository root as a loose file. Overlay headings: [ABOUT.md](ABOUT.md) (Overlay contract).
 
 ```markdown
 - FIRST: `_first/AGENTS.md` then `_first/ABOUT.md` then `_first/FIRST.md`; then `/f-*` and the instance path listed in FIRST.md
@@ -82,7 +81,7 @@ spec: 0.3-draft
 
 When Journeys includes a visual identity file, that artifact follows [DESIGN.md Format](https://raw.githubusercontent.com/google-labs-code/design.md/refs/heads/main/docs/spec.md). Prefer `_first/DESIGN.md`. Lint with an explicit path if you use the Google CLI. Never two palettes. It is a Journeys artifact, not a station.
 
-The target repository's instructions override generic FIRST guidance. Adopt upstream FIRST changes by replacing factory files (`AGENTS.md`, `ABOUT.md`, `templates/`) and refreshing `/f` after reviewing the diff. Never overwrite `FIRST.md` or instance files.
+The target repository's instructions override generic FIRST guidance. Adopt upstream FIRST changes by replacing factory files (`AGENTS.md`, `ABOUT.md`, this README if you vendored it) and refreshing `/f` after reviewing the diff. Never overwrite `FIRST.md` or instance files.
 
 Complete structural validation is for this source tree, not a drop-in copy. From the repository root:
 

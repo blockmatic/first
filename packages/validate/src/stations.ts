@@ -44,20 +44,6 @@ export const articleHeadings = [
   'Further Reading',
 ] as const
 
-export const templateHeadings = [
-  'Principle',
-  'Artifacts',
-  'Minimum Useful Artifact',
-  'Notes',
-] as const
-
-export const productTemplateHeadings = [
-  ...templateHeadings,
-  'Brief',
-  'Feature map',
-  'Roadmap',
-] as const
-
 export const skillFolderByStation = {
   PRODUCT: 'f-product',
   JOURNEYS: 'f-journeys',
