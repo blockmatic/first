@@ -1,11 +1,6 @@
 {
   "version": 1,
   "skills": {
-    "b": {
-      "source": "../basilic-skills",
-      "sourceType": "local",
-      "computedHash": "567e629f532d85f4642c09fa93c523781a454279816a8ff19211e4d6963940c4"
-    },
     "f": {
       "source": ".",
       "sourceType": "local",
@@ -26,7 +21,7 @@
     "next-v16": {
       "source": "../basilic-skills",
       "sourceType": "local",
-      "computedHash": "1877b79e1ae48829e925f341a5b795983310a11433523d2c1ca4d697065a75fd"
+      "computedHash": "0d29fb83302c3e148073a5ccef18c027e5b0c1714ec227522623018a37eacd72"
     },
     "nuqs-v2": {
       "source": "../basilic-skills",
@@ -54,6 +49,11 @@
       "source": "../basilic-skills",
       "sourceType": "local",
       "computedHash": "c1defb69b7efc461d8be5b45b69d209ca9c80eb5af51237e039dba62dfcd01df"
+    },
+    "workflow": {
+      "source": "../basilic-skills",
+      "sourceType": "local",
+      "computedHash": "2b388c5cf780a737c06588268142ace86d76313ac6788f25cb239aada19ba208"
     }
   }
 }
