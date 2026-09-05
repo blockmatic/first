@@ -37,15 +37,15 @@ Site URL defaults to `http://localhost:3000`. Override with `NEXT_PUBLIC_SITE_UR
 | **Tech skills** | `next-v16`, `vercel-react-v1`, `frontend-design-v1`, … |
 | **Indexed docs** | This page. Advisory |
 
-Refresh tech and workflow skills from [blockmatic/basilic-skills](https://github.com/blockmatic/basilic-skills). Refresh FIRST station skills from this repo:
+Until basilic-skills publishes `b` on GitHub `main`, refresh workflow (and the compiled tech skills you keep local) from a checkout. GitHub `main` still ships `workflow`, not `b`. Do not invent a GitHub hash.
+
+Refresh FIRST station skills from this repo:
 
 ```bash
 npx skills add blockmatic/first
 ```
 
-Also:
-
-Until the catalog publish lands, preview `b` from a local basilic-skills checkout (do not invent a GitHub hash):
+Preview `b` from a local basilic-skills checkout:
 
 ```bash
 pnpm dlx skills@latest add /path/to/basilic-skills --skill b --skill next-v16 --skill vercel-react-v1 --skill nuqs-v2 --skill vitest-v4 --skill file-organization-v1 --skill frontend-design-v1 --skill shadcn-v3 --skill tailwind-design-system-v4 -a cursor --copy -y

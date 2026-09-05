@@ -4,7 +4,7 @@
     "b": {
       "source": "../basilic-skills",
       "sourceType": "local",
-      "computedHash": "9c83dc85534592382478ee0d886a0430722f641e68c4d7975182f150a5b55f88"
+      "computedHash": "567e629f532d85f4642c09fa93c523781a454279816a8ff19211e4d6963940c4"
     },
     "f": {
       "source": ".",
@@ -26,13 +26,12 @@
     "next-v16": {
       "source": "../basilic-skills",
       "sourceType": "local",
-      "computedHash": "cc26706e21057639f9d131ebf7ee903b5bdf1dfa66f8ccaca43737aee11df66b"
+      "computedHash": "1877b79e1ae48829e925f341a5b795983310a11433523d2c1ca4d697065a75fd"
     },
     "nuqs-v2": {
-      "source": "blockmatic/basilic-skills",
-      "sourceType": "github",
-      "skillPath": "skills/nuqs-v2/SKILL.md",
-      "computedHash": "5063df2c7617f3c3638dc44729971d5648c90a04a4aadce826b0347bb215fa9f"
+      "source": "../basilic-skills",
+      "sourceType": "local",
+      "computedHash": "54011f46ddc5856a7bd8780dcdfca0849d3b1bf00417d1334c63d787c3325e04"
     },
     "shadcn-v3": {
       "source": "blockmatic/basilic-skills",
@@ -47,16 +46,14 @@
       "computedHash": "9336f38958f2a6cb46553eb4e08e70e8f2979898dbfa4fd086e2b983aad0fc66"
     },
     "vercel-react-v1": {
-      "source": "blockmatic/basilic-skills",
-      "sourceType": "github",
-      "skillPath": "skills/vercel-react-v1/SKILL.md",
-      "computedHash": "f451c6eddc8acea6cba67c6f54dc9a1d602f4353b0b0fc26fbd5580b4a0ec68a"
+      "source": "../basilic-skills",
+      "sourceType": "local",
+      "computedHash": "9d9b3bd49c078cd1bbf33c6c737d22750de6c03907a77c4154e88dd7c9839254"
     },
     "vitest-v4": {
-      "source": "blockmatic/basilic-skills",
-      "sourceType": "github",
-      "skillPath": "skills/vitest-v4/SKILL.md",
-      "computedHash": "26600524df910f688aeb75856b8ec457fe72250947e61f8fc8ba47d8bd8bb1c9"
+      "source": "../basilic-skills",
+      "sourceType": "local",
+      "computedHash": "c1defb69b7efc461d8be5b45b69d209ca9c80eb5af51237e039dba62dfcd01df"
     }
   }
 }
