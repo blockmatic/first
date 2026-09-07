@@ -32,12 +32,12 @@ Site URL defaults to `http://localhost:3000`. Override with `NEXT_PUBLIC_SITE_UR
 | Layer | Role |
 | --- | --- |
 | **Rules** (`.cursor/rules`) | Constraints |
-| **Workflow skills** (`.agents/skills/b/b-<name>/`) | Slash playbooks (`/b`, `/b-plan-feature`, `/b-exec-push`, `/b-git-commit`) |
+| **Workflow skills** (`.agents/skills/workflow/<name>/`) | Slash playbooks (`/workflow`, `/plan-feature`, `/exec-push`, `/git-commit`) |
 | **FIRST skills** | `/f-*` from `npx skills add blockmatic/first` (catalog in this repo) |
 | **Tech skills** | `next-v16`, `vercel-react-v1`, `frontend-design-v1`, … |
 | **Indexed docs** | This page. Advisory |
 
-Until basilic-skills publishes `b` on GitHub `main`, refresh workflow (and the compiled tech skills you keep local) from a checkout. GitHub `main` still ships `workflow`, not `b`. Do not invent a GitHub hash.
+Refresh workflow (and the compiled tech skills you keep local) from a basilic-skills checkout or GitHub. Do not invent a GitHub hash.
 
 Refresh FIRST station skills from this repo:
 
@@ -45,13 +45,13 @@ Refresh FIRST station skills from this repo:
 npx skills add blockmatic/first
 ```
 
-Preview `b` from a local basilic-skills checkout:
+Preview `workflow` from a local basilic-skills checkout:
 
 ```bash
-pnpm dlx skills@latest add /path/to/basilic-skills --skill b --skill next-v16 --skill vercel-react-v1 --skill nuqs-v2 --skill vitest-v4 --skill file-organization-v1 --skill frontend-design-v1 --skill shadcn-v3 --skill tailwind-design-system-v4 -a cursor --copy -y
+pnpm dlx skills@latest add /path/to/basilic-skills --skill workflow --skill next-v16 --skill vercel-react-v1 --skill nuqs-v2 --skill vitest-v4 --skill file-organization-v1 --skill frontend-design-v1 --skill shadcn-v3 --skill tailwind-design-system-v4 -a cursor --copy -y
 ```
 
-After publication, substitute `blockmatic/basilic-skills` for the local path. Old `/workflow` names are not aliases. Commit `skills-lock.json` with `.agents/skills/`.
+After publication, substitute `blockmatic/basilic-skills` for the local path. Do not keep a leftover `b` package. Commit `skills-lock.json` with `.agents/skills/`.
 
 ## Who edits what
 
@@ -66,12 +66,12 @@ Edit essays and specs in `_first/`. The site reads those files; do not paste a s
 
 ## Workflow
 
-Use `/b` to list playbooks. `/b plan` is a shortcut to `/b-plan-feature`. `/b-build` verifies locally and does not commit. `/b-exec-push` is the full implementation-to-PR path.
+Use `/workflow` to list playbooks. `/workflow plan` is a shortcut to `/plan-feature`. `/build` verifies locally and does not commit. `/exec-push` is the full implementation-to-PR path.
 
-1. **Plan** — Plan mode, then `/b plan`. List goals, acceptance conditions, and verification per slice.
-2. **Review** — `/b-review-plan` if you want a structured pass.
-3. **Implement** — `/b build`. Test between steps (`pnpm validate` when factory files change).
-4. **Publish when requested** — `/b commit`, `/b pr`, or `/b-exec-push`. Conventional Commits. Never `--no-verify`.
+1. **Plan** — Plan mode, then `/workflow plan`. List goals, acceptance conditions, and verification per slice.
+2. **Review** — `/review-plan` if you want a structured pass.
+3. **Implement** — `/workflow build`. Test between steps (`pnpm validate` when factory files change).
+4. **Publish when requested** — `/workflow commit`, `/workflow pr`, or `/exec-push`. Conventional Commits. Never `--no-verify`.
 
 When UI changes, verify in the browser: home, one article, one spec, a docs page.
 

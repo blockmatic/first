@@ -6,9 +6,9 @@ See /f-workflow.
 
 ## Artifacts
 
-- **Fact:** Path: plan (`/b-plan-feature`) → review → `/b-build` → `/b-git-commit` → PR → CI → `/b-retro`. Use `/b-exec-push` only when the full implementation-to-PR path is requested.
+- **Fact:** Path: plan (`/plan-feature`) → review → `/build` → `/git-commit` → PR → CI → `/retro`. Use `/exec-push` only when the full implementation-to-PR path is requested.
 - **Fact:** Index: [`../../apps/web/content/docs/development.mdx`](../../apps/web/content/docs/development.mdx)
-- **Fact:** Playbooks: `.agents/skills/b/` — `/b` dispatcher and `/b-*` children; local preview from basilic-skills until the catalog publish
+- **Fact:** Playbooks: `.agents/skills/workflow/` — `/workflow` dispatcher and unprefixed children; refresh from basilic-skills with `pnpm dlx`
 - **Fact:** Work state: GitHub issues and pull requests on `blockmatic/first`
 - **Fact:** Git: default global user; Conventional Commits; never `--no-verify`; never Co-authored-by trailers
 - **Fact:** Human gates: product scope, secrets/trust boundaries, destructive ops ([`../AGENTS.md`](../AGENTS.md))
@@ -23,10 +23,10 @@ See /f-workflow.
 ## Minimum Useful Artifact
 
 - intent, owner, visible state: issue or PR
-- plan: `/b-plan-feature` for non-trivial work
+- plan: `/plan-feature` for non-trivial work
 - actors: human, agent, CI
 - gates: product, security, destructive — ask a human
-- validation: `pnpm qa`; learning: `/b-retro` and durable files
+- validation: `pnpm qa`; learning: `/retro` and durable files
 - PR: lint workflow + security workflow
 - local: `pnpm validate` for factory files
 - deploy: Vercel from `apps/web`
