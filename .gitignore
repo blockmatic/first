@@ -17,6 +17,8 @@ next-env.d.ts
 .source/
 out/
 build
+!.agents/skills/workflow/build/
+!.agents/skills/workflow/build/**
 dist
 bin
 
